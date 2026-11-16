@@ -1,0 +1,41 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1773142398471,
+      "tag": "0000_overconfident_blue_shield",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1774367680907,
+      "tag": "0001_nervous_gideon",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1778852176737,
+      "tag": "0002_bouncy_scorpion",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1779806329821,
+      "tag": "0003_daily_thunderbolts",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1788250541684,
+      "tag": "0004_motionless_anita_blake",
+      "breakpoints": true
+    }
+  ]
+}

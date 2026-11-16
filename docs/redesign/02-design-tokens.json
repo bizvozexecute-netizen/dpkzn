@@ -1,0 +1,232 @@
+{
+  "$schema-note": "Dark Studio · dpkzn.ru. Формат готов под tailwind.config: содержимое ключа `tailwind` спредится в theme.extend. Акцент подключается через CSS-переменные (см. cssVariables) — смена варианта акцента = замена 3 переменных, без правки классов.",
+  "meta": {
+    "project": "Detailing Place — dpkzn.ru",
+    "concept": "Dark Studio",
+    "version": "1.0.0",
+    "date": "2026-08-28"
+  },
+
+  "color": {
+    "bg": {
+      "base": "#0A0A0C",
+      "elevated": "#111114",
+      "surface": "#141418",
+      "surface2": "#1C1C21",
+      "overlay": "rgba(10, 10, 12, 0.80)",
+      "scrim": "linear-gradient(180deg, rgba(10,10,12,0) 0%, rgba(10,10,12,0.85) 100%)"
+    },
+    "border": {
+      "default": "rgba(255, 255, 255, 0.08)",
+      "strong": "rgba(255, 255, 255, 0.14)",
+      "accent": "rgba(var(--accent-rgb), 0.40)"
+    },
+    "text": {
+      "primary": "#F5F5F7",
+      "secondary": "#8E8E93",
+      "tertiary": "#6E6E73",
+      "inverse": "#0A0A0C",
+      "on-accent": "#0A0A0C"
+    },
+    "accent": {
+      "_usage": "Единственный акцент на сайте. Значение задаётся CSS-переменными --accent / --accent-hover / --accent-rgb. Ниже 3 варианта на выбор — см. 02-design-system.md §2.",
+      "DEFAULT": "var(--accent)",
+      "hover": "var(--accent-hover)",
+      "pressed": "var(--accent-pressed)",
+      "subtle": "rgba(var(--accent-rgb), 0.12)",
+      "glow": "rgba(var(--accent-rgb), 0.25)",
+      "variants": {
+        "A-amber": {
+          "label": "Янтарный — тёплый свет малярной лампы",
+          "accent": "#F5A623",
+          "hover": "#FFB84D",
+          "pressed": "#D98F12",
+          "rgb": "245, 166, 35"
+        },
+        "B-coldblue": {
+          "label": "Холодный синий — LED-свет бокса, техно",
+          "accent": "#4DA3FF",
+          "hover": "#74B8FF",
+          "pressed": "#2B8AF0",
+          "rgb": "77, 163, 255"
+        },
+        "C-ceramic": {
+          "label": "Керамик-минт — цвет керамических составов, отстройка от конкурентов",
+          "accent": "#34D6B5",
+          "hover": "#5CE3C8",
+          "pressed": "#1FB899",
+          "rgb": "52, 214, 181"
+        }
+      }
+    },
+    "semantic": {
+      "success": "#30D158",
+      "warning": "#FFD60A",
+      "error": "#FF453A",
+      "info": "#64D2FF"
+    },
+    "misc": {
+      "whatsapp": "#25D366",
+      "telegram": "#2AABEE",
+      "max": "#8B5CF6",
+      "rating-star": "#FFD60A"
+    }
+  },
+
+  "typography": {
+    "fontFamily": {
+      "display": ["Unbounded", "Arial Black", "sans-serif"],
+      "text": ["Inter", "-apple-system", "Segoe UI", "Roboto", "sans-serif"],
+      "_alt-pair": "Запасная пара, если Unbounded покажется слишком широким на живых макетах: display = Oswald (condensed), text = Golos Text. Оба с кириллицей на Google Fonts. Подключение — self-host через next/font (не CDN).",
+      "_weights": { "display": [500, 600, 700], "text": [400, 500, 600, 700] }
+    },
+    "fontSize": {
+      "_format": "tailwind fontSize: [size, { lineHeight, letterSpacing, fontWeight }]. Значения в rem (базис 16px). Мобильные размеры — вторым значением в комментарии, реализуются через clamp() ниже.",
+      "display-1": ["6rem", { "lineHeight": "1.02", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+      "display-2": ["4.5rem", { "lineHeight": "1.05", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+      "h1": ["4rem", { "lineHeight": "1.05", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+      "h2": ["3rem", { "lineHeight": "1.1", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+      "h3": ["2rem", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+      "h4": ["1.5rem", { "lineHeight": "1.3", "letterSpacing": "0em", "fontWeight": "500" }],
+      "body-lg": ["1.25rem", { "lineHeight": "1.55", "fontWeight": "400" }],
+      "body": ["1.0625rem", { "lineHeight": "1.6", "fontWeight": "400" }],
+      "body-sm": ["0.9375rem", { "lineHeight": "1.5", "fontWeight": "400" }],
+      "caption": ["0.8125rem", { "lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500" }],
+      "overline": ["0.75rem", { "lineHeight": "1.3", "letterSpacing": "0.12em", "fontWeight": "600" }],
+      "price": ["1.75rem", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+    },
+    "fluid": {
+      "_usage": "Крупные заголовки — через clamp, чтобы не плодить брейкпоинты",
+      "display-1": "clamp(2.75rem, 1.2rem + 6.5vw, 6rem)",
+      "display-2": "clamp(2.375rem, 1.2rem + 4.9vw, 4.5rem)",
+      "h1": "clamp(2.25rem, 1.4rem + 3.6vw, 4rem)",
+      "h2": "clamp(1.875rem, 1.3rem + 2.4vw, 3rem)",
+      "h3": "clamp(1.5rem, 1.25rem + 1vw, 2rem)"
+    },
+    "numeric": "tabular-nums для всех цен и таблиц (font-variant-numeric)"
+  },
+
+  "spacing": {
+    "_base": "шкала 4px; ниже — только дополнения к дефолтной шкале Tailwind",
+    "18": "4.5rem",
+    "22": "5.5rem",
+    "30": "7.5rem",
+    "34": "8.5rem",
+    "40": "10rem",
+    "section-sm": "5rem",
+    "section": "7.5rem",
+    "section-lg": "10rem",
+    "section-sm-mobile": "3.5rem",
+    "section-mobile": "4.5rem",
+    "section-lg-mobile": "6rem"
+  },
+
+  "container": {
+    "max": "1280px",
+    "wide": "1440px",
+    "prose": "720px",
+    "padding": { "mobile": "1.25rem", "tablet": "2rem", "desktop": "3rem" }
+  },
+
+  "borderRadius": {
+    "sm": "0.5rem",
+    "md": "0.75rem",
+    "lg": "1rem",
+    "xl": "1.5rem",
+    "pill": "999px"
+  },
+
+  "boxShadow": {
+    "card": "0 1px 0 rgba(255,255,255,0.04) inset, 0 8px 32px rgba(0,0,0,0.45)",
+    "card-hover": "0 1px 0 rgba(255,255,255,0.06) inset, 0 16px 48px rgba(0,0,0,0.55)",
+    "sticky": "0 -8px 32px rgba(0,0,0,0.5)",
+    "glow-accent": "0 0 40px rgba(var(--accent-rgb), 0.25)",
+    "glow-accent-strong": "0 0 64px rgba(var(--accent-rgb), 0.35)",
+    "studio-light": "0 -120px 240px -80px rgba(255,255,255,0.07) inset"
+  },
+
+  "backgroundImage": {
+    "studio-spot": "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(255,255,255,0.06), transparent)",
+    "accent-spot": "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(var(--accent-rgb), 0.10), transparent)",
+    "hero-scrim": "linear-gradient(180deg, rgba(10,10,12,0.2) 0%, rgba(10,10,12,0.55) 60%, #0A0A0C 100%)"
+  },
+
+  "screens": {
+    "sm": "640px",
+    "md": "768px",
+    "lg": "1024px",
+    "xl": "1280px",
+    "2xl": "1536px"
+  },
+
+  "zIndex": {
+    "header": "50",
+    "megamenu": "60",
+    "sticky-cta": "70",
+    "modal": "80",
+    "toast": "90"
+  },
+
+  "motion": {
+    "duration": {
+      "fast": "150ms",
+      "base": "250ms",
+      "slow": "400ms",
+      "reveal": "600ms",
+      "hero": "800ms"
+    },
+    "easing": {
+      "out": "cubic-bezier(0.22, 1, 0.36, 1)",
+      "in-out": "cubic-bezier(0.65, 0, 0.35, 1)",
+      "linear": "linear"
+    },
+    "reveal": { "translateY": "24px", "opacity": "0 -> 1", "stagger": "80ms", "threshold": 0.2, "once": true },
+    "hover-scale": "1.03",
+    "parallax-max": "6%",
+    "reduced-motion": "при prefers-reduced-motion: все transition/animation до 1ms, parallax и autoplay-видео отключаются (постер вместо видео)"
+  },
+
+  "cssVariables": {
+    "_usage": "Выбранный вариант акцента кладётся в :root. Пример для варианта A (янтарный):",
+    ":root": {
+      "--accent": "#F5A623",
+      "--accent-hover": "#FFB84D",
+      "--accent-pressed": "#D98F12",
+      "--accent-rgb": "245, 166, 35",
+      "--font-display": "'Unbounded', 'Arial Black', sans-serif",
+      "--font-text": "'Inter', -apple-system, 'Segoe UI', sans-serif"
+    }
+  },
+
+  "tailwind": {
+    "_usage": "Готовый фрагмент: import tokens from './02-design-tokens.json'; theme: { extend: tokens.tailwind }",
+    "colors": {
+      "bg": "#0A0A0C",
+      "elevated": "#111114",
+      "surface": "#141418",
+      "surface2": "#1C1C21",
+      "line": "rgba(255,255,255,0.08)",
+      "line-strong": "rgba(255,255,255,0.14)",
+      "ink": "#F5F5F7",
+      "ink-secondary": "#8E8E93",
+      "ink-tertiary": "#6E6E73",
+      "accent": {
+        "DEFAULT": "var(--accent)",
+        "hover": "var(--accent-hover)",
+        "pressed": "var(--accent-pressed)",
+        "subtle": "rgba(var(--accent-rgb), 0.12)"
+      },
+      "success": "#30D158",
+      "warning": "#FFD60A",
+      "error": "#FF453A"
+    },
+    "fontFamily": {
+      "display": ["var(--font-display)"],
+      "text": ["var(--font-text)"]
+    },
+    "borderRadius": { "sm": "0.5rem", "md": "0.75rem", "lg": "1rem", "xl": "1.5rem", "pill": "999px" },
+    "screens": { "sm": "640px", "md": "768px", "lg": "1024px", "xl": "1280px", "2xl": "1536px" },
+    "transitionDuration": { "fast": "150ms", "base": "250ms", "slow": "400ms", "reveal": "600ms" },
+    "transitionTimingFunction": { "out": "cubic-bezier(0.22,1,0.36,1)", "in-out": "cubic-bezier(0.65,0,0.35,1)" }
+  }
+}

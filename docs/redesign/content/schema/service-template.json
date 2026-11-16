@@ -1,0 +1,26 @@
+{
+  "_usage": "Шаблон для каждой из 19 страниц услуг. {{...}} заполняются из данных страницы при сборке. Вставлять на страницу услуги рядом с FAQPage.",
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "{{service.h1}}",
+  "serviceType": "{{service.title_short}}",
+  "description": "{{service.meta.description}}",
+  "url": "https://dpkzn.ru/{{service.slug}}",
+  "provider": {
+    "@id": "https://dpkzn.ru/#organization"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Казань"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "RUB",
+    "price": "{{service.priceFrom}}",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "minPrice": "{{service.priceFrom}}",
+      "priceCurrency": "RUB"
+    }
+  }
+}

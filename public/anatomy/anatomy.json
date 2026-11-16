@@ -1,0 +1,410 @@
+{
+ "meta": {
+  "version": "1.4",
+  "accent": "#F5A623",
+  "preset": "medium",
+  "note": "Цены «от», источник — прайсы dpkzn.ru (инвентаризация 01). Пути ассетов — относительно /anatomy/. Рендер v3: стёкла фар прозрачные, ходовые огни включены. v1.2: лобовое стекло отделено от боковых в масках; домашняя станция крыши — S3 (борт), на S1 она в полоску. v1.3: 48-кадровый спин 360°; порог целиком в геометрии — 2D-патч не нужен; передние двери без полосы порога. v1.4: спин отрендерен в 1920×823 (резкость на Retina), маски без AA-шума (фильтр компонент <50px), zone_palette.json внутри пакета."
+ },
+ "stations": {
+  "S0": {
+   "label": "Обзор",
+   "still": "still_S0.webp"
+  },
+  "S1": {
+   "label": "Капот",
+   "still": "still_S1.webp"
+  },
+  "S2": {
+   "label": "Оптика и фронт",
+   "still": "still_S2.webp"
+  },
+  "S3": {
+   "label": "Борт",
+   "still": "still_S3.webp"
+  },
+  "S4": {
+   "label": "Колесо и арка",
+   "still": "still_S4.webp"
+  },
+  "S5": {
+   "label": "Корма",
+   "still": "still_S5.webp"
+  }
+ },
+ "order": [
+  "S0",
+  "S1",
+  "S2",
+  "S3",
+  "S4",
+  "S5"
+ ],
+ "transitions": {
+  "pattern": "flight_{from}_{to}.mp4",
+  "note": "есть все соседние пары в обе стороны; несоседние — цепочкой через промежуточные станции со скоростью 1.5x"
+ },
+ "zones": [
+  {
+   "id": "hood",
+   "label": "Капот",
+   "station": "S1",
+   "services": [
+    {
+     "title": "Антигравийная плёнка (капот)",
+     "priceFrom": 17000,
+     "href": "/ppf"
+    },
+    {
+     "title": "Полировка элемента",
+     "priceFrom": 2000,
+     "href": "/polirovka"
+    },
+    {
+     "title": "Керамика",
+     "priceFrom": 15000,
+     "href": "/zashchitnye-pokrytiya"
+    },
+    {
+     "title": "Удаление вмятин (PDR)",
+     "priceFrom": 5000,
+     "href": "/remont-vmyatin"
+    }
+   ]
+  },
+  {
+   "id": "front_bumper",
+   "label": "Передний бампер",
+   "station": "S2",
+   "services": [
+    {
+     "title": "Антигравийная плёнка (бампер)",
+     "priceFrom": 17000,
+     "href": "/ppf"
+    },
+    {
+     "title": "Полировка элемента",
+     "priceFrom": 2000,
+     "href": "/polirovka"
+    },
+    {
+     "title": "Антихром решётки",
+     "priceFrom": 2000,
+     "href": "/antihrom"
+    }
+   ]
+  },
+  {
+   "id": "headlights",
+   "label": "Фары",
+   "station": "S2",
+   "services": [
+    {
+     "title": "Бронирование фар",
+     "priceFrom": 3000,
+     "href": "/broneplenka"
+    },
+    {
+     "title": "Полировка фар",
+     "priceFrom": 2000,
+     "href": "/polirovka-far"
+    },
+    {
+     "title": "Bi-LED линзы",
+     "priceFrom": 15000,
+     "href": "/ustanovka-linz"
+    },
+    {
+     "title": "Регулировка света",
+     "priceFrom": 1500,
+     "href": "/regulirovka-far"
+    }
+   ]
+  },
+  {
+   "id": "windshield",
+   "label": "Лобовое стекло",
+   "station": "S1",
+   "services": [
+    {
+     "title": "Антидождь",
+     "priceFrom": 1500,
+     "href": "/antidozhd"
+    },
+    {
+     "title": "Полировка стекла",
+     "priceFrom": 2000,
+     "href": "/polirovka-stekol"
+    },
+    {
+     "title": "Бронирование лобового",
+     "priceFrom": 10000,
+     "href": "/broneplenka"
+    }
+   ]
+  },
+  {
+   "id": "front_doors",
+   "label": "Передние двери",
+   "station": "S3",
+   "services": [
+    {
+     "title": "PPF на элемент",
+     "priceFrom": 8000,
+     "href": "/ppf"
+    },
+    {
+     "title": "Полировка элемента",
+     "priceFrom": 2000,
+     "href": "/polirovka"
+    },
+    {
+     "title": "Удаление вмятин (PDR)",
+     "priceFrom": 5000,
+     "href": "/remont-vmyatin"
+    },
+    {
+     "title": "Шумоизоляция дверей",
+     "priceFrom": 10000,
+     "href": "/shumoizolyaciya"
+    }
+   ]
+  },
+  {
+   "id": "rear_doors",
+   "label": "Задние двери",
+   "station": "S3",
+   "services": [
+    {
+     "title": "PPF на элемент",
+     "priceFrom": 8000,
+     "href": "/ppf"
+    },
+    {
+     "title": "Полировка элемента",
+     "priceFrom": 2000,
+     "href": "/polirovka"
+    },
+    {
+     "title": "Удаление вмятин (PDR)",
+     "priceFrom": 5000,
+     "href": "/remont-vmyatin"
+    },
+    {
+     "title": "Шумоизоляция дверей",
+     "priceFrom": 10000,
+     "href": "/shumoizolyaciya"
+    }
+   ]
+  },
+  {
+   "id": "front_fenders",
+   "label": "Передние крылья",
+   "station": "S3",
+   "services": [
+    {
+     "title": "PPF на элемент",
+     "priceFrom": 8000,
+     "href": "/ppf"
+    },
+    {
+     "title": "Полировка элемента",
+     "priceFrom": 2000,
+     "href": "/polirovka"
+    },
+    {
+     "title": "Удаление вмятин (PDR)",
+     "priceFrom": 5000,
+     "href": "/remont-vmyatin"
+    }
+   ]
+  },
+  {
+   "id": "rear_quarter",
+   "label": "Задние крылья",
+   "station": "S5",
+   "services": [
+    {
+     "title": "PPF на элемент",
+     "priceFrom": 8000,
+     "href": "/ppf"
+    },
+    {
+     "title": "Полировка элемента",
+     "priceFrom": 2000,
+     "href": "/polirovka"
+    }
+   ]
+  },
+  {
+   "id": "rockers",
+   "label": "Пороги",
+   "station": "S3",
+   "services": [
+    {
+     "title": "Бронирование порогов",
+     "priceFrom": 6000,
+     "href": "/broneplenka"
+    },
+    {
+     "title": "Антикор",
+     "priceFrom": 6000,
+     "href": "/antikor"
+    }
+   ]
+  },
+  {
+   "id": "roof",
+   "label": "Крыша",
+   "station": "S3",
+   "services": [
+    {
+     "title": "Оклейка крыши плёнкой",
+     "priceFrom": 12000,
+     "href": "/oklejka-avto"
+    },
+    {
+     "title": "Полировка и керамика",
+     "priceFrom": 16000,
+     "href": "/polirovka"
+    }
+   ]
+  },
+  {
+   "id": "tailgate",
+   "label": "Крышка багажника",
+   "station": "S5",
+   "services": [
+    {
+     "title": "PPF на элемент",
+     "priceFrom": 8000,
+     "href": "/ppf"
+    },
+    {
+     "title": "Полировка элемента",
+     "priceFrom": 2000,
+     "href": "/polirovka"
+    },
+    {
+     "title": "Удаление вмятин (PDR)",
+     "priceFrom": 5000,
+     "href": "/remont-vmyatin"
+    }
+   ]
+  },
+  {
+   "id": "rear_bumper",
+   "label": "Задний бампер",
+   "station": "S5",
+   "services": [
+    {
+     "title": "PPF на элемент",
+     "priceFrom": 17000,
+     "href": "/ppf"
+    },
+    {
+     "title": "Полировка элемента",
+     "priceFrom": 2000,
+     "href": "/polirovka"
+    }
+   ]
+  },
+  {
+   "id": "taillights",
+   "label": "Задняя оптика",
+   "station": "S5",
+   "services": [
+    {
+     "title": "Бронирование фонарей",
+     "priceFrom": 3000,
+     "href": "/broneplenka"
+    },
+    {
+     "title": "Полировка фонарей",
+     "priceFrom": 2000,
+     "href": "/polirovka-far"
+    }
+   ]
+  },
+  {
+   "id": "side_windows",
+   "label": "Боковые стёкла",
+   "station": "S3",
+   "services": [
+    {
+     "title": "Тонировка",
+     "priceFrom": 7000,
+     "href": "/tonirovka"
+    },
+    {
+     "title": "Антидождь на стёкла",
+     "priceFrom": 1500,
+     "href": "/antidozhd"
+    }
+   ]
+  },
+  {
+   "id": "wheels",
+   "label": "Диски и арки",
+   "station": "S4",
+   "services": [
+    {
+     "title": "Бронирование дисков (1 шт.)",
+     "priceFrom": 8000,
+     "href": "/ppf"
+    },
+    {
+     "title": "Антикор арок",
+     "priceFrom": 6000,
+     "href": "/antikor"
+    }
+   ]
+  }
+ ],
+ "masks": {
+  "pattern": "mask_{station}_{zone}.png",
+  "note": "8-bit PNG, белое = зона; генерируются из zone-цветовых рендеров скриптом build_assets.py"
+ },
+ "highlight": {
+  "hover": {
+   "edgeGlow": 0.7,
+   "edgeLine": 1.2,
+   "fill": 0,
+   "dimOthers": 0.92
+  },
+  "selected": {
+   "edgeGlow": 0.7,
+   "edgeLine": 1.2,
+   "fill": 0.4,
+   "screen": 0.45,
+   "dimOthers": 0.85,
+   "pulse": {
+    "period": 2.4,
+    "amplitude": 0.15
+   }
+  },
+  "color": "#F5A623",
+  "fillByStation": {
+   "S0": 0.5,
+   "S1": 0.3,
+   "S2": 0.3,
+   "S3": 0.5,
+   "S4": 0.3,
+   "S5": 0.5
+  },
+  "contour": {
+   "technique": "filter: drop-shadow(0 0 6px rgba(245,166,35,.9)) на элементе с alpha-маской",
+   "note": "контур берётся из той же маски, второй набор ассетов не нужен"
+  }
+ },
+ "spin": {
+  "count": 48,
+  "beautyPattern": "spin/beauty_{i:02d}.webp",
+  "zonesPattern": "spin/zones_{i:02d}.png",
+  "startStation": "S0",
+  "degreesPerFrame": 7.5,
+  "note": "кадр 0 == still_S0; зонные карты PNG-8: индекс 0 — фон, 1..15 — зоны в порядке zone_palette.json",
+  "frameWidth": 1920,
+  "frameHeight": 823,
+  "zonesWidth": 1280
+ }
+}

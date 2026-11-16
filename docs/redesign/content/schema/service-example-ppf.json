@@ -1,0 +1,25 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Антигравийная плёнка (PPF) в Казани",
+  "serviceType": "Оклейка антигравийной плёнкой",
+  "description": "Антигравийная плёнка PPF (LLumar, SunTek) на кузов авто в Казани. Защита от сколов, гарантия 7 лет. Расчёт по фото за 15 минут — звоните.",
+  "url": "https://dpkzn.ru/ppf",
+  "provider": {
+    "@id": "https://dpkzn.ru/#organization"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Казань"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "RUB",
+    "price": "50000",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "minPrice": "50000",
+      "priceCurrency": "RUB"
+    }
+  }
+}

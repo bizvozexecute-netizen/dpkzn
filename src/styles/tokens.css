@@ -1,0 +1,874 @@
+/* ============================================================================
+   Dark Studio — токены редизайна. Источник: docs/redesign/02-design-tokens.json
+   Смена варианта акцента = четыре переменные в :root, классы не трогаются.
+   Блок аддитивный: старые токены (accent-gold, bg-card, text-secondary…) живут
+   рядом, пока не переделаны все шаблоны — иначе непеределанные страницы и
+   админка ломаются на середине пути.
+   ========================================================================= */
+
+/* Знак рубля U+20BD лежит в подмножестве latin-ext, а не в cyrillic. Из-за
+   одного символа браузер тянул 83 КБ Inter latin-ext — треть всего веса
+   шрифтов страницы. Отдаём рубль системной гарнитуре: она есть в любой ОС,
+   загрузки не требует, а подмножество перестаёт быть нужным. Если ни одного
+   локального шрифта нет, браузер просто вернётся к Inter. */
+@font-face {
+  font-family: "Ruble";
+  /* Порядок по платформам, где знак точно есть: Android → Windows → iOS/macOS →
+     Linux. Если ни одна не нашлась, браузер переходит к Inter из общего стека:
+     знак нарисуется правильно, просто вернутся те самые 83 КБ. */
+  src:
+    local("Roboto"), local("Segoe UI"), local("SF Pro Text"), local("Helvetica Neue"),
+    local("Arial"), local("Noto Sans"), local("DejaVu Sans");
+  unicode-range: U+20BD;
+  font-display: swap;
+}
+
+:root {
+  /* Акцент — латунь (решение владельца 02.09: «почему всё жёлтое»).
+     Янтарь #f5a623 кричал на каждой кнопке; латунь — ювелирная деталь на
+     чёрном лаке: выделение, тонкие линии, подсветка зон. CTA — цвета слоновой
+     кости (см. Button), акцент им не нужен. */
+  --accent: #c9a66b;
+  --accent-hover: #d8b87e;
+  --accent-pressed: #b08f55;
+  --accent-rgb: 201, 166, 107;
+
+  /* Моушен (ДС §5). Держим обычными переменными: в Tailwind 4 нет namespace
+     для duration, а компонентам нужны именно эти пять значений. */
+  --dur-fast: 150ms;
+  --dur-base: 250ms;
+  --dur-slow: 400ms;
+  --dur-reveal: 600ms;
+  --dur-hero: 800ms;
+}
+
+@theme inline {
+  /* ---- Цвет ---- */
+  --color-bg: #0a0a0c;
+  --color-elevated: #111114;
+  --color-surface: #141418;
+  --color-surface2: #1c1c21;
+  --color-line: rgba(255, 255, 255, 0.08);
+  --color-line-strong: rgba(255, 255, 255, 0.14);
+
+  --color-ink: #f5f5f7;
+  --color-ink-secondary: #8e8e93;
+  --color-ink-tertiary: #6e6e73;
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-pressed: var(--accent-pressed);
+  --color-accent-subtle: rgba(var(--accent-rgb), 0.12);
+
+  --color-success: #30d158;
+  --color-warning: #ffd60a;
+  --color-error: #ff453a;
+
+  --color-whatsapp: #25d366;
+  --color-telegram: #2aabee;
+  --color-max: #8b5cf6;
+  --color-star: #ffd60a;
+
+  /* ---- Типографика ---- */
+  --font-display: "Ruble", var(--font-unbounded), "Arial Black", ui-sans-serif, sans-serif;
+  --font-text: "Ruble", var(--font-inter), -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-sans: "Ruble", var(--font-inter), -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Крупные размеры — clamp, чтобы не плодить брейкпоинты (tokens.typography.fluid) */
+  --text-display-1: clamp(2.75rem, 1.2rem + 6.5vw, 6rem);
+  --text-display-1--line-height: 1.02;
+  --text-display-1--letter-spacing: -0.02em;
+  --text-display-1--font-weight: 600;
+
+  --text-display-2: clamp(2.375rem, 1.2rem + 4.9vw, 4.5rem);
+  --text-display-2--line-height: 1.05;
+  --text-display-2--letter-spacing: -0.02em;
+  --text-display-2--font-weight: 600;
+
+  --text-h1: clamp(2.25rem, 1.4rem + 3.6vw, 4rem);
+  --text-h1--line-height: 1.05;
+  --text-h1--letter-spacing: -0.015em;
+  --text-h1--font-weight: 600;
+
+  --text-h2: clamp(2rem, 1.2rem + 3.2vw, 3.5rem);
+  --text-h2--line-height: 1.1;
+  --text-h2--letter-spacing: -0.01em;
+  --text-h2--font-weight: 600;
+
+  --text-h3: clamp(1.5rem, 1.25rem + 1vw, 2rem);
+  --text-h3--line-height: 1.2;
+  --text-h3--letter-spacing: -0.01em;
+  --text-h3--font-weight: 500;
+
+  --text-h4: 1.5rem;
+  --text-h4--line-height: 1.3;
+  --text-h4--font-weight: 500;
+
+  --text-body-lg: 1.25rem;
+  --text-body-lg--line-height: 1.55;
+
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.6;
+
+  --text-body-sm: 0.9375rem;
+  --text-body-sm--line-height: 1.5;
+
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.4;
+  --text-caption--letter-spacing: 0.01em;
+  --text-caption--font-weight: 500;
+
+  --text-overline: 0.75rem;
+  --text-overline--line-height: 1.3;
+  --text-overline--letter-spacing: 0.12em;
+  --text-overline--font-weight: 600;
+
+  --text-price: clamp(2rem, 1.5rem + 1.5vw, 2.75rem);
+  --text-price--line-height: 1.2;
+  --text-price--letter-spacing: -0.01em;
+  --text-price--font-weight: 600;
+
+  /* Цифры-факты (1200+ авто): крупнее h3, чтобы числа работали как графика */
+  --text-stat: clamp(2.25rem, 1.4rem + 3.4vw, 3.75rem);
+  --text-stat--line-height: 1.05;
+  --text-stat--letter-spacing: -0.015em;
+  --text-stat--font-weight: 600;
+
+  /* ---- Радиусы ---- */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-pill: 999px;
+
+  /* ---- Тени: глубина строится светом, а не чернотой (ДС принцип 4) ---- */
+  --shadow-card: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 8px 32px rgba(0, 0, 0, 0.45);
+  --shadow-card-hover: 0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 16px 48px rgba(0, 0, 0, 0.55);
+  --shadow-sticky: 0 -8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-glow-accent: 0 0 40px rgba(var(--accent-rgb), 0.25);
+  --shadow-glow-accent-strong: 0 0 64px rgba(var(--accent-rgb), 0.35);
+
+  /* ---- Кривые (ДС §5) ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ---- Слои ---- */
+  --z-index-header: 50;
+  --z-index-megamenu: 60;
+  --z-index-sticky: 70;
+  --z-index-modal: 80;
+  --z-index-toast: 90;
+}
+
+/* ============================================================================
+   Утилиты Dark Studio. Префикс ds- отделяет их от старых .container-main /
+   .section-padding, чтобы переделанные и непеределанные страницы не мешали
+   друг другу до конца тиража.
+   ========================================================================= */
+
+.ds-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+/* Длинные слова в заголовках должны помещаться даже на узких экранах. */
+.site-content :is(h1, h2, h3, h4, h5, h6) {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+@media (max-width: 480px) {
+  .site-content h1 {
+    font-size: clamp(1.625rem, 7.6vw, 2rem);
+  }
+}
+.ds-container-wide {
+  max-width: 1440px;
+}
+.ds-prose-width {
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .ds-container { padding-inline: 2rem; }
+}
+@media (min-width: 1280px) {
+  .ds-container { padding-inline: 3rem; }
+}
+
+/* Воздух вместо давления (ДС принцип 3): 64–96 мобайл, 120–160 десктоп */
+.ds-section { padding-block: 4rem; }
+.ds-section-sm { padding-block: 3.5rem; }
+.ds-section-lg { padding-block: 6rem; }
+
+@media (min-width: 768px) {
+  .ds-section { padding-block: 7.5rem; }
+  .ds-section-sm { padding-block: 5rem; }
+  .ds-section-lg { padding-block: 10rem; }
+}
+
+/* Свет как в боксе: радиальные «прожекторы» над секциями */
+.ds-studio-spot {
+  background-image: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(255, 255, 255, 0.06), transparent);
+}
+.ds-accent-spot {
+  background-image: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(var(--accent-rgb), 0.1), transparent);
+}
+
+/* Сцена: прожектор софтбокса сверху + тёплый янтарный отсвет — два слоя,
+   альфа ≤7%: глобальное зерно body::after дизерит градиенты от бандинга */
+.ds-scene {
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(255, 255, 255, 0.07), transparent),
+    radial-gradient(ellipse 55% 38% at 62% 0%, rgba(var(--accent-rgb), 0.05), transparent);
+}
+
+/* Диагональная полоса света — как блик софтбокса на капоте */
+.ds-beam {
+  position: relative;
+  overflow: hidden;
+}
+.ds-beam::before {
+  content: "";
+  position: absolute;
+  inset: -30% -10% auto;
+  height: 160%;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 38%,
+    rgba(var(--accent-rgb), 0.02) 47%,
+    rgba(var(--accent-rgb), 0.045) 50%,
+    rgba(var(--accent-rgb), 0.02) 53%,
+    transparent 62%
+  );
+}
+
+/* Порядковые номера секций: журнальный ритм. CSS-контент не попадает в
+   снапшот контент-гейта; aria-hidden — чтобы генерируемый текст не читался. */
+main { counter-reset: ds-sec; }
+.ds-numbered { counter-increment: ds-sec; }
+.ds-secnum {
+  position: absolute;
+  top: -0.5rem;
+  right: 0;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+}
+.ds-secnum::before {
+  content: counter(ds-sec, decimal-leading-zero);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(3.25rem, 2rem + 5.5vw, 6.5rem);
+  letter-spacing: 0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+}
+@supports not (-webkit-text-stroke: 1px #000) {
+  .ds-secnum::before { color: rgba(255, 255, 255, 0.06); }
+}
+
+/* Хореография появления: варианты Reveal */
+/* «Из-под линии»: внешний слой только режет (overflow), едет внутренний.
+   Нельзя клипать сам наблюдаемый элемент (clip-path в ноль ослепляет его же
+   IntersectionObserver — Chrome отдаёт ratio 0), и transform дешевле клипа. */
+.ds-reveal--line {
+  transform: none;
+  overflow: hidden;
+  /* нижний зазор — чтобы свисающие выносные буквы не резались после посадки */
+  padding-bottom: 0.15em;
+  margin-bottom: -0.15em;
+}
+.ds-reveal--line[data-revealed="true"] { transform: none; }
+.ds-reveal-line-inner {
+  display: block;
+  transform: translateY(115%);
+  transition: transform var(--dur-reveal, 600ms) var(--ease-out);
+}
+.ds-reveal--line[data-revealed="true"] .ds-reveal-line-inner { transform: translateY(0); }
+.ds-reveal--scale { transform: scale(0.96) translateY(12px); }
+
+/* Цвет текста primary-кнопки — отдельным классом: tailwind-merge в cn()
+   считает text-bg (цвет) и text-body (кегль) одной группой и выкидывал
+   первый — текст на кнопке всегда был белым (на слоновой кости — невидим) */
+.ds-btn-primary {
+  color: var(--color-bg);
+}
+
+/* Шторка заливки primary-кнопки: псевдоэлемент над фоном, под текстом */
+.ds-btn-shutter {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.ds-btn-shutter::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  /* Латунь заезжает под тёмный текст кнопки цвета слоновой кости */
+  background: var(--accent);
+  transform: translateX(-101%);
+  transition: transform var(--dur-base, 250ms) var(--ease-out);
+}
+@media (hover: hover) {
+  .ds-btn-shutter:hover::before { transform: translateX(0); }
+}
+
+/* Ссылки: подчёркивание растёт слева (только transform) */
+.ds-link-anim { position: relative; }
+.ds-link-anim::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 1px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-base, 250ms) var(--ease-out);
+}
+@media (hover: hover) {
+  .ds-link-anim:hover::after { transform: scaleX(1); }
+}
+
+/* Кромка-свечение карточки: кольцо через mask-composite, анимируется opacity */
+.ds-card-glow { position: relative; }
+.ds-card-glow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(140px 90px at 30% 0%, rgba(var(--accent-rgb), 0.55), rgba(255, 255, 255, 0.12) 60%, transparent);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity var(--dur-slow, 400ms) var(--ease-out);
+  pointer-events: none;
+}
+@media (hover: hover) {
+  .ds-card-glow:hover::after { opacity: 1; }
+}
+.ds-hero-scrim {
+  /* Текст живёт слева и сверху: там затемнение плотное, справа кадр дышит.
+     Светлые кадры (диск, хром) без левого градиента съедали хлебные крошки
+     и лид — замечание владельца 02.09. */
+  background-image:
+    linear-gradient(90deg, rgba(10, 10, 12, 0.78) 0%, rgba(10, 10, 12, 0.5) 42%, rgba(10, 10, 12, 0.08) 78%, transparent 100%),
+    linear-gradient(180deg, rgba(10, 10, 12, 0.55) 0%, rgba(10, 10, 12, 0.15) 30%, rgba(10, 10, 12, 0.55) 65%, #0a0a0c 100%);
+}
+/* Телефон: горизонтальный градиент гасил весь кадр — текст живёт внизу,
+   верхняя половина кадра пусть дышит (владелец 03.09: «видео почти не видно») */
+@media (max-width: 1023px) {
+  .ds-hero-scrim {
+    background-image: linear-gradient(180deg, rgba(10, 10, 12, 0.5) 0%, rgba(10, 10, 12, 0.05) 28%, rgba(10, 10, 12, 0.35) 52%, rgba(10, 10, 12, 0.82) 74%, #0a0a0c 100%);
+  }
+}
+
+/* Видео-луп hero. Геометрия целиком здесь, а не утилитами в разметке:
+   мобильный и десктопный слои различаются не только размером. */
+.ds-hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Телефон: hero — 0.39 по соотношению, кадр — 1.79. Растянутый на весь hero
+   кадр превращался в узкую полосу (владелец 03.09), поэтому у видео свой слой
+   сверху с соотношением мобильного ре-кадра: он помещается целиком, а низ
+   растворяется маской в постер — стыка не видно. */
+@media (max-width: 1023px) {
+  .ds-hero-video {
+    inset: 0 0 auto 0;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 58%, rgba(0, 0, 0, 0.35) 82%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 0%, #000 58%, rgba(0, 0, 0, 0.35) 82%, transparent 100%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ds-hero-slide[data-active] { animation: none; }
+}
+
+/* Цены и таблицы — моноширинные цифры (ДС принцип 5) */
+.ds-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Scroll-reveal: единственная анимация появления на сайте (ДС §5).
+   Только opacity и transform — никаких height/top в кадре. */
+.ds-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--dur-reveal) var(--ease-out), transform var(--dur-reveal) var(--ease-out);
+}
+.ds-reveal[data-revealed="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+/* Фокус виден на всех интерактивах (ДС §6) */
+.ds-focus:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+  .ds-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Переход шага квиза: fade + slide 16px (ДС §4.3). Высоту контейнера не трогаем —
+   §5 запрещает анимировать height в кадре. */
+.ds-step {
+  animation: ds-step-in var(--dur-base) var(--ease-out) both;
+}
+
+@keyframes ds-step-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Ошибка поля: короткий шейк вместо алерта */
+.ds-shake {
+  animation: ds-shake 200ms var(--ease-in-out);
+}
+
+@keyframes ds-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+/* «Анатомия детейлинга»: подсветка зоны — её собственная маска, окрашенная
+   акцентом. Параметры — из anatomy.json.highlight (fill, dimOthers, pulse). */
+.ds-anatomy-zone {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-color: var(--accent);
+  -webkit-mask-image: var(--mask);
+  mask-image: var(--mask);
+  /* Маски зон — с альфа-каналом (scripts/anatomy-mask-alpha.mjs), режим по
+     умолчанию alpha. Яркостный режим убран: без альфы он спасал Chrome, но
+     iOS читал маску иначе, и одна и та же зона то заливала весь кадр, то
+     не рисовалась вовсе. Один режим для всех браузеров. */
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mix-blend-mode: screen;
+  /* Гаснет быстрее, чем загорается (спека анатомии §3.1 п.4) */
+  transition: opacity 200ms var(--ease-out);
+}
+
+/* Контур зоны: drop-shadow применяется к альфа-маске, поэтому свечение ложится
+   ровно по её краю — отдельные ассеты контура не нужны. Широкий радиус даёт
+   ореол, узкий — чёткую кромку. */
+.ds-anatomy-zone {
+  filter:
+    drop-shadow(0 0 6px rgba(var(--accent-rgb), 0.9))
+    drop-shadow(0 0 1.5px rgba(var(--accent-rgb), 1));
+}
+
+.ds-anatomy-zone--hover {
+  opacity: 0.14;
+}
+
+/* Пока есть выбранные зоны, остальной кадр приглушается (dimOthers из
+   anatomy.json): на стиллах запечённые тёплые блики студийного света, и
+   без вуали янтарная заливка на них не читалась как «выбрано». */
+/* Уходящий стилл при кроссфейде станций: монтируется поверх нового кадра
+   и сам гаснет анимацией — второго состояния «начать гасить» не нужно. */
+.ds-anatomy-still-prev {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-size: cover;
+  background-position: center;
+  animation: ds-anatomy-still-out 300ms var(--ease-out) forwards;
+}
+@keyframes ds-anatomy-still-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.ds-anatomy-veil {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: #000;
+  opacity: 0;
+  transition: opacity 200ms var(--ease-out);
+}
+.ds-anatomy-veil[data-on="true"] {
+  opacity: 0.15;
+}
+
+/* ── Кадр-в-кадре (мобайл): контейнер 4:3, frame несёт полную геометрию
+   1920:823 и кропается одним transform'ом. На десктопе frame нейтрален —
+   один код-путь без ветвлений в JS. ── */
+.ds-anatomy-frame {
+  position: absolute;
+  inset: 0;
+}
+@media (max-width: 1023px) {
+  .ds-anatomy-frame {
+    right: auto;
+    width: 175.02%; /* высота кадра 1920:823 заполняет контейнер 4:3 целиком */
+    transform: translateX(var(--crop-tx, -20%));
+    transition: transform var(--crop-dur, 350ms) var(--ease-in-out);
+  }
+  /* Края окна намекают, что сцена шире кадра и её можно панить */
+  .ds-anatomy-crop::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgba(10, 10, 12, 0.45), transparent 7%, transparent 93%, rgba(10, 10, 12, 0.45));
+  }
+}
+
+/* Подсветка выбранных зон на кадрах спина: канвас растянут на кадр,
+   внутреннее разрешение — половина зонной карты (drawSpinHighlight) */
+.ds-anatomy-spin-paint {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Курсор-колесо (fx/CursorWheel): системная стрелка прячется, пока колесо
+   армировано; поля ввода оставляют текстовый курсор */
+.ds-cursor-on,
+.ds-cursor-on a,
+.ds-cursor-on button,
+.ds-cursor-on [role="button"],
+.ds-cursor-on summary {
+  cursor: none;
+}
+.ds-cursor-on input,
+.ds-cursor-on textarea,
+.ds-cursor-on select {
+  cursor: auto;
+}
+.ds-cursor {
+  position: fixed;
+  left: -14px;
+  top: -14px;
+  z-index: 90;
+  pointer-events: none;
+  color: var(--color-ink);
+  opacity: 0;
+  /* Без difference: над светлой кнопкой колесо уходило в синий. Тёмный ореол
+     держит белый диск читаемым и на слоновой кости */
+  filter: drop-shadow(0 0 1.5px rgba(0, 0, 0, 0.75));
+  will-change: transform;
+  transition: opacity var(--dur-base) var(--ease-out);
+}
+.ds-cursor-rim {
+  transform-origin: 0 0;
+  transition: opacity var(--dur-fast);
+}
+/* Дым из-под колеса: полноэкранный канвас под курсором, рисуется только
+   пока живы клубы; обычное смешение, не difference — дым белёсый везде */
+.ds-cursor-smoke {
+  position: fixed;
+  inset: 0;
+  z-index: 89;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Чип выбора (зоны анатомии, класс в прайсе, фолбэк класса в hero):
+   тихий по умолчанию, латунная кромка — только у выбранного */
+.ds-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  height: 2.75rem;
+  padding-inline: 0.875rem;
+  border-radius: var(--radius-pill, 999px);
+  border: 1px solid transparent;
+  background: var(--color-surface);
+  color: var(--color-ink-secondary);
+  font-size: var(--text-caption);
+  white-space: nowrap;
+  transition: color var(--dur-fast), border-color var(--dur-fast), background-color var(--dur-fast);
+}
+.ds-chip:hover {
+  color: var(--color-ink);
+  border-color: var(--color-line-strong);
+}
+.ds-chip--current {
+  color: var(--color-ink);
+}
+.ds-chip[aria-pressed="true"],
+.ds-chip[data-on="true"] {
+  color: var(--accent);
+  border-color: rgba(var(--accent-rgb), 0.55);
+  background: rgba(var(--accent-rgb), 0.08);
+}
+
+/* Панель услуг и сметы внутри вьюера анатомии (десктоп): стеклянная
+   карточка у края кадра, сторона выбирается по положению зоны */
+.ds-anatomy-panel {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 5;
+  width: 340px;
+  max-height: calc(100% - 2rem);
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-line-strong);
+  background: rgba(10, 10, 12, 0.78);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-card);
+  animation: ds-hint-in 300ms var(--ease-out) both;
+}
+.ds-anatomy-panel[data-side="left"] {
+  right: auto;
+  left: 1rem;
+}
+
+/* Хинт вращения: пилюля при первом знакомстве с блоком (§3.2),
+   исчезает навсегда после первого драга */
+.ds-anatomy-hint {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.875rem;
+  border-radius: var(--radius-pill, 999px);
+  border: 1px solid var(--line-strong, rgba(255, 255, 255, 0.16));
+  background: rgba(10, 10, 12, 0.82);
+  backdrop-filter: blur(8px);
+  font-size: var(--text-caption);
+  color: var(--ink);
+  pointer-events: none;
+  animation: ds-hint-in 400ms var(--ease-out) both;
+}
+@keyframes ds-hint-in {
+  from {
+    opacity: 0;
+    translate: 0 6px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+/* Кадр спина 360°: показывается, пока машина повёрнута с кадра 0 */
+.ds-anatomy-scrub {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 180ms var(--ease-out);
+}
+.ds-anatomy-scrub[data-on="true"] {
+  opacity: 1;
+  transition: none;
+}
+
+/* Подпись зоны у курсора (десктоп): двигается transform'ом из onPointerMove */
+.ds-anatomy-tip {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 4;
+  pointer-events: none;
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--radius-pill, 999px);
+  border: 1px solid var(--line-strong, rgba(255, 255, 255, 0.16));
+  background: rgba(10, 10, 12, 0.82);
+  backdrop-filter: blur(8px);
+  font-size: var(--text-caption);
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+/* Нижняя закреплённая панель зоны (мобайл, ДС §4.9) */
+.ds-anatomy-sheet {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 60;
+  border-top: 1px solid var(--line-strong, rgba(255, 255, 255, 0.16));
+  border-radius: 1rem 1rem 0 0;
+  background: rgba(10, 10, 12, 0.92);
+  backdrop-filter: blur(16px);
+  padding: 1.25rem 1.25rem calc(1.25rem + env(safe-area-inset-bottom));
+  /* Над шитом должны помещаться шапка (60) и кадр машины (~167 на 390px):
+     иначе подсвеченная зона уходит под панель. Длинный список крутится внутри. */
+  max-height: min(80vh, calc(100vh - 15.5rem));
+  max-height: min(80dvh, calc(100dvh - 15.5rem));
+  overflow-y: auto;
+  transform: translateY(105%);
+  transition: transform var(--dur-base, 250ms) var(--ease-out);
+}
+.ds-anatomy-sheet[data-open="true"] {
+  transform: translateY(0);
+  box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Выбранная зона «пере-освещается»: внутри маски лежит тот же стилл в
+   исходной яркости — вуаль на зону не действует. Поверх — янтарная заливка
+   отдельным слоем: её blend и пульс не трогают слой стилла. Плотность
+   заливки — по станции: на крупных планах та же заливка, что на обзорных,
+   превращала кадр в сплошное пятно. */
+.ds-anatomy-zone--selected {
+  background-color: transparent;
+  background-image: var(--still);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  mix-blend-mode: normal;
+}
+
+/* Заливка — статичный слой без blend и без анимации, с собственной маской.
+   iOS Safari не рисовал замаскированный слой, у которого есть mix-blend-mode
+   и анимация opacity (владелец 04.09: зона не выделяется на iPhone; до
+   этого те же свойства заливали золотом весь кадр). Обычное наложение
+   латуни с плотностью --zone-fill — это же делает канвас подсветки на кадрах
+   спина, теперь стиллы и спин выглядят одинаково. --mask наследуется
+   с .ds-anatomy-zone. */
+.ds-anatomy-zone-tint {
+  position: absolute;
+  inset: 0;
+  background-color: var(--accent);
+  opacity: var(--zone-fill, 0.5);
+  -webkit-mask-image: var(--mask);
+  mask-image: var(--mask);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+/* Прайс: одна таблица в DOM, мобильный вид — из неё же. Дублировать разметку
+   под адаптив нельзя: прайс дважды в разметке — это двойные цены для поисковика
+   и лишний вес страницы.
+
+   Какую колонку класса показывать на мобильном, решает CSS по data-атрибуту
+   контейнера — таблица остаётся серверной и не гидрируется. */
+@media (max-width: 767px) {
+  .ds-price thead {
+    display: none;
+  }
+  .ds-price table,
+  .ds-price tbody,
+  .ds-price tr,
+  .ds-price th,
+  .ds-price td {
+    display: block;
+    width: 100%;
+  }
+  /* Строка — карточка: название слева, цена выбранного класса справа
+     наверху, состав и кнопка под названием. Раньше цена стояла ПОСЛЕ
+     кнопки «В расчёт» — замечание владельца 02.09. */
+  .ds-price tr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 1rem;
+    align-items: start;
+    padding-block: 1.25rem;
+  }
+  .ds-price th[scope="row"] {
+    grid-column: 1;
+    padding: 0;
+  }
+  /* Разделители на мобиле — у строки-карточки, не у ячеек грида */
+  .ds-price th[scope="row"],
+  .ds-price td {
+    border-bottom: 0;
+  }
+  .ds-price tbody tr {
+    border-bottom: 1px solid var(--color-line);
+  }
+  /* Популярный пакет на мобиле — карточка: подложка, скругление, кромка */
+  .ds-price tr[data-popular] {
+    margin-block: 0.5rem;
+    padding: 1.25rem;
+    border: 1px solid var(--color-line-strong);
+    border-radius: 0.75rem;
+    background: var(--color-surface);
+  }
+  .ds-price tr[data-popular] > * {
+    border-bottom: 0;
+  }
+  /* Ячейки остальных классов не удаляем из разметки — таблица одна */
+  .ds-price td[data-cls] {
+    display: none;
+  }
+  [data-active-class="0"] .ds-price td[data-cls="0"],
+  [data-active-class="1"] .ds-price td[data-cls="1"],
+  [data-active-class="2"] .ds-price td[data-cls="2"],
+  [data-active-class="3"] .ds-price td[data-cls="3"],
+  [data-active-class="4"] .ds-price td[data-cls="4"] {
+    display: block;
+    grid-column: 2;
+    grid-row: 1;
+    width: auto;
+    padding: 0;
+    font-weight: 600;
+    text-align: right;
+    white-space: nowrap;
+    /* Активная цена — акцент прайса, а не строка таблицы */
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    line-height: 1.2;
+  }
+  .ds-elements td {
+    display: block;
+    grid-column: 2;
+    grid-row: 1;
+    width: auto;
+    padding: 0;
+    text-align: right;
+    white-space: nowrap;
+  }
+  .ds-elements tr {
+    padding-block: 0.875rem;
+    align-items: center;
+  }
+}
+
+/* Поэлементный список сворачивается стилем: цены остаются в разметке */
+[data-elements="collapsed"] .ds-elements tbody tr:nth-child(n + 9) {
+  display: none;
+}
+
+
+

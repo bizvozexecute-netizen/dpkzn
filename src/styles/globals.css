@@ -1,0 +1,616 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Токены редизайна Dark Studio. Импорт до старого @theme: пересекающиеся ключи
+   (--color-bg, --font-display, --shadow-card, --font-sans) удалены ниже, ими
+   владеет tokens.css. */
+@import "./tokens.css";
+
+/* ===== THEME TOKENS ===== */
+@theme inline {
+  /* Colors — Premium Dark with warm undertone */
+  --color-bg-warm: #110F0B;
+  --color-bg-card: #171513;
+  --color-bg-hover: #1E1C18;
+  --color-bg-gradient-end: #12111A;
+
+  --color-text: #F5F4F0;
+  --color-text-secondary: #B0AAA4;
+
+  --color-accent-gold: #D4B830;
+  --color-accent-lime: #D4B830;
+  --color-accent-red: #D45555;
+  --color-accent-whatsapp: #25D366;
+  --color-accent-phone: #2E75B6;
+
+  --color-border: #2A2723;
+
+  /* Fonts */
+
+  /* Spacing */
+  --spacing-section: 3rem;
+  --spacing-section-md: 5rem;
+  --spacing-safe-bottom: 80px;
+
+  /* Border Radius */
+  --radius-card: 12px;
+  --radius-button: 8px;
+
+  /* Container */
+  --container-main: 1280px;
+
+  /* Shadows */
+  --shadow-header: 0 4px 24px rgba(0, 0, 0, 0.5);
+  --shadow-glow-gold: 0 0 24px rgba(212, 184, 48, 0.12);
+  --shadow-glow-lime: 0 0 24px rgba(212, 184, 48, 0.12);
+
+  /* Animations */
+  --animate-pulse-ring: pulse-ring 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-slide-up: slide-up 0.3s ease-out;
+  --animate-fade-in: fade-in 0.3s ease-out;
+
+  @keyframes pulse-ring {
+    0% { transform: scale(0.8); opacity: 1; }
+    100% { transform: scale(2); opacity: 0; }
+  }
+
+  @keyframes slide-up {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  --animate-float-1: float-1 20s ease-in-out infinite;
+  --animate-float-2: float-2 25s ease-in-out infinite;
+  --animate-shimmer: shimmer 3s ease-in-out infinite;
+
+  @keyframes float-1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -20px) scale(1.03); }
+    66% { transform: translate(-15px, 10px) scale(0.98); }
+  }
+
+  @keyframes float-2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-25px, 18px) scale(1.05); }
+  }
+
+  @keyframes shimmer {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+  }
+}
+
+/* ===== BASE ===== */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Subtle grain/noise texture overlay on entire page */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+@media (max-width: 767px) {
+  body::after { content: none; background-image: none; }
+  /* Keep the photograph in the header strip and all copy on a solid surface. */
+  .ds-fast-hero > .ds-hero-scrim {
+    background: linear-gradient(to bottom, rgb(12 16 20 / 55%), transparent 5rem, #101419 10rem);
+  }
+  .ds-fast-hero > .ds-container {
+    padding-top: 10rem;
+    --color-ink-secondary: #cbd2d9;
+  }
+  [data-compact-hero] {
+    min-height: auto;
+    background-color: #101419;
+  }
+  [data-compact-hero] img,
+  [data-compact-hero] video {
+    height: 13rem;
+    object-position: center 48%;
+  }
+  [data-compact-hero] > .ds-hero-scrim {
+    background: linear-gradient(to bottom, rgb(0 0 0 / 48%), transparent 5rem, transparent 8rem, #101419 13rem);
+  }
+  [data-compact-hero] > .ds-container {
+    padding-top: 13rem;
+    padding-bottom: 1.5rem;
+  }
+  .ds-fast-hero h1 { line-height: 1.1; }
+  .ds-defer-layout {
+    content-visibility: auto;
+    contain-intrinsic-block-size: auto var(--section-height, 650px);
+  }
+}
+
+input, select, textarea {
+  font-size: 16px !important; /* iOS zoom prevention */
+}
+
+[id] {
+  scroll-margin-top: 80px;
+}
+
+/* ===== COMPONENT CLASSES ===== */
+.container-main {
+  max-width: var(--container-main);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.section-padding {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+.hero-overlay {
+  background: linear-gradient(to bottom, rgba(12, 11, 9, 0.6) 0%, rgba(12, 11, 9, 0.92) 100%);
+}
+
+/* Hero cinematic scrim — keeps text legible over any slideshow frame without
+   per-element text-shadow hacks. Adds a warm "studio spotlight" + vignette. */
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  /* Mobile: content sits at the bottom → stronger bottom darkening,
+     warm gold spotlight from the top, soft edge vignette. */
+  background:
+    radial-gradient(120% 75% at 82% 4%, rgba(212, 184, 48, 0.10) 0%, transparent 46%),
+    radial-gradient(150% 130% at 50% 118%, transparent 55%, rgba(12, 11, 9, 0.55) 100%),
+    linear-gradient(
+      to bottom,
+      rgba(12, 11, 9, 0.35) 0%,
+      rgba(12, 11, 9, 0.10) 22%,
+      rgba(12, 11, 9, 0.52) 54%,
+      rgba(12, 11, 9, 0.88) 80%,
+      rgba(12, 11, 9, 0.96) 100%
+    );
+}
+
+@media (min-width: 768px) {
+  .hero-scrim {
+    /* Desktop: left scrim for the text column (right stays lighter — quiz has
+       its own dark card), gold studio spotlight top-right, bottom fade. */
+    background:
+      radial-gradient(70% 75% at 88% 14%, rgba(212, 184, 48, 0.12) 0%, transparent 52%),
+      linear-gradient(
+        to right,
+        rgba(12, 11, 9, 0.92) 0%,
+        rgba(12, 11, 9, 0.70) 30%,
+        rgba(12, 11, 9, 0.25) 52%,
+        rgba(12, 11, 9, 0) 72%
+      ),
+      linear-gradient(
+        to bottom,
+        rgba(12, 11, 9, 0) 35%,
+        rgba(12, 11, 9, 0.40) 72%,
+        rgba(12, 11, 9, 0.85) 100%
+      ),
+      radial-gradient(120% 100% at 50% 122%, transparent 62%, rgba(12, 11, 9, 0.5) 100%);
+  }
+}
+
+/* Subtle Ken-Burns drift for the hero photography (motion only). */
+@keyframes hero-drift {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+
+.hero-kenburns {
+  animation: hero-drift 22s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-kenburns {
+    animation: none;
+    transform: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+.card {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+/* CTA button — brand yellow */
+.btn-cta {
+  background: linear-gradient(135deg, #D4B830 0%, #B89E20 100%);
+  color: #0C0B09;
+  border-radius: var(--radius-button);
+  font-weight: 700;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.btn-cta:hover {
+  background: linear-gradient(135deg, #E0C840 0%, #D4B830 100%);
+  box-shadow: 0 0 20px rgba(212, 184, 48, 0.25);
+}
+
+.btn-cta:active {
+  transform: scale(0.98);
+}
+
+.btn-secondary {
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  border-radius: var(--radius-button);
+  font-weight: 600;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(212, 184, 48, 0.08);
+}
+
+.btn-whatsapp {
+  background-color: var(--color-accent-whatsapp);
+  color: #fff;
+  border-radius: var(--radius-button);
+  font-weight: 700;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebe57;
+}
+
+/* ===== UTILITIES ===== */
+.pb-safe {
+  padding-bottom: var(--spacing-safe-bottom);
+}
+
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .pb-safe {
+    padding-bottom: calc(var(--spacing-safe-bottom) + env(safe-area-inset-bottom));
+  }
+}
+
+.glass {
+  background-color: rgba(12, 11, 9, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-header);
+  border-top: 1px solid rgba(212, 184, 48, 0.06);
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Section background variants */
+.gradient-section {
+  background: linear-gradient(to bottom, var(--color-bg), var(--color-bg-gradient-end));
+}
+
+.section-warm {
+  background: var(--color-bg-warm);
+}
+
+/* Diagonal studio light streak — like automotive photography */
+.section-spotlight {
+  position: relative;
+}
+
+.section-spotlight::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 50%;
+  height: 160%;
+  background: linear-gradient(
+    135deg,
+    transparent 30%,
+    rgba(212, 184, 48, 0.015) 45%,
+    rgba(212, 184, 48, 0.03) 50%,
+    rgba(212, 184, 48, 0.015) 55%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* Card premium top accent — subtle gold line */
+.card-glow-top {
+  position: relative;
+}
+
+.card-glow-top::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--color-accent-gold) 40%, rgba(212, 184, 48, 0.2) 70%, transparent 100%);
+  opacity: 0.4;
+}
+
+/* Glow CTA button — warm gold glow */
+.btn-cta-glow {
+  box-shadow: 0 0 20px rgba(212, 184, 48, 0.2), 0 0 40px rgba(212, 184, 48, 0.08);
+}
+
+/* Desktop-only: the glow slowly "breathes" to draw the eye to the primary CTA. */
+@media (min-width: 769px) {
+  .btn-cta-glow {
+    animation: cta-breathe 4s ease-in-out infinite;
+  }
+}
+
+@keyframes cta-breathe {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(212, 184, 48, 0.2), 0 0 40px rgba(212, 184, 48, 0.08);
+  }
+  50% {
+    box-shadow: 0 0 26px rgba(212, 184, 48, 0.32), 0 0 52px rgba(212, 184, 48, 0.14);
+  }
+}
+
+/* Desktop-only: one-time gold sheen sweep across the hero headline. */
+@media (min-width: 769px) {
+  .hero-title-sheen {
+    background-size: 200% 100%;
+    animation: title-sheen 2.2s ease-out 0.4s 1 both;
+  }
+}
+
+@keyframes title-sheen {
+  from {
+    background-position: 120% 0;
+  }
+  to {
+    background-position: 0% 0;
+  }
+}
+
+/* Gentle pop when the displayed price switches with the car-class selector. */
+@keyframes price-pop {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.price-pop {
+  animation: price-pop 0.28s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-cta-glow {
+    animation: none;
+  }
+  .hero-title-sheen {
+    animation: none;
+    background-size: auto;
+  }
+  .price-pop {
+    animation: none;
+  }
+}
+
+/* Header scrolled state */
+.header-scrolled {
+  background-color: rgba(12, 11, 9, 0.97) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+  border-bottom-color: rgba(42, 39, 35, 0.8);
+}
+
+/* CTA section background — warm radial glow */
+.cta-section-bg {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(212, 184, 48, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 50%, rgba(212, 184, 48, 0.02) 0%, transparent 60%),
+    linear-gradient(to bottom, var(--color-bg), var(--color-bg-gradient-end));
+}
+
+/* Placeholder image */
+.placeholder-image {
+  background: linear-gradient(135deg, #171513 0%, #1E1C18 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: var(--color-text-secondary);
+}
+
+/* Custom select */
+.select-custom {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239A9590' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 2.5rem;
+}
+
+/* PaintDepthLab range slider (44px touch zone, gold thumb) */
+.paint-lab-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 44px;
+  background: transparent;
+  cursor: pointer;
+}
+.paint-lab-range::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--color-accent-gold), rgba(212, 184, 48, 0.25));
+}
+.paint-lab-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  margin-top: -10px;
+  border-radius: 50%;
+  background: var(--color-accent-gold);
+  border: 3px solid var(--color-bg);
+  box-shadow: 0 2px 10px rgba(212, 184, 48, 0.45);
+}
+.paint-lab-range::-moz-range-track {
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--color-accent-gold), rgba(212, 184, 48, 0.25));
+}
+.paint-lab-range::-moz-range-thumb {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--color-accent-gold);
+  border: 3px solid var(--color-bg);
+  box-shadow: 0 2px 10px rgba(212, 184, 48, 0.45);
+}
+.paint-lab-range:focus-visible {
+  outline: 2px solid var(--color-accent-gold);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* One native type family from the first paint through the service sections. */
+:root:has(main.site-content) {
+  --font-inter: system-ui;
+  --font-unbounded: system-ui;
+  --font-sans: system-ui, sans-serif;
+  --studio-yellow: #ffda35;
+  --font-text: var(--font-sans);
+  --font-display: var(--font-sans);
+}
+/* The studio photograph and the caption panel form one diagonal cut. */
+[data-compact-hero] {
+  --studio-paper: #eeeae0;
+}
+[data-compact-hero] > .ds-container {
+  isolation: isolate;
+}
+[data-compact-hero] h1 {
+  letter-spacing: -.025em;
+  font-weight: 600;
+  text-wrap: balance;
+}
+:root:has(main.site-content) .ds-btn-primary:not(:disabled) {
+  background-color: var(--studio-yellow);
+  color: #181713;
+}
+.studio-frame-label {
+  position: absolute;
+  z-index: 1;
+  right: max(6vw, 24px);
+  bottom: 3rem;
+  padding: .35rem .65rem;
+  border-left: 3px solid var(--studio-yellow);
+  background: #121212;
+  color: white;
+  font-family: inherit;
+  font-size: .8125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+@media (min-width: 768px) {
+  [data-compact-hero] > .ds-hero-scrim {
+    background: linear-gradient(103deg, #111519 0%, #111519 46%, rgb(17 21 25 / .91) 46.1%, transparent 60%);
+  }
+}
+@media (max-width: 767px) {
+  [data-compact-hero] {
+    background: var(--studio-paper);
+  }
+  [data-compact-hero] img, [data-compact-hero] video {
+    height: 15rem;
+  }
+  [data-compact-hero] > .ds-hero-scrim {
+    background: linear-gradient(173deg, transparent calc(13.7rem - 2px), var(--studio-yellow) calc(13.7rem - 1px), var(--studio-yellow) 13.95rem, var(--studio-paper) calc(13.95rem + 1px));
+  }
+  [data-compact-hero] > .studio-frame-label {
+    top: 8.75rem;
+    bottom: auto;
+    right: 1.25rem;
+  }
+  [data-compact-hero] > .ds-container {
+    padding-top: 15rem;
+  }
+  [data-compact-hero] :is(h1, .ds-container > p, summary) {
+    color: #181713;
+    text-shadow: none;
+  }
+  [data-compact-hero] .ds-container a[href]:not(details a) {
+    color: #181713;
+  }
+  [data-compact-hero] details[open] {
+    background: #151719;
+    color: #fff;
+    border-radius: .75rem;
+    padding: 0 1rem 1rem;
+  }
+  [data-compact-hero] details[open] summary {
+    color: #fff;
+  }
+}
+
+.ds-lead-form { container-type: inline-size; }
+@container (max-width: 24rem) {
+  .ds-lead-fields { flex-direction: column; }
+  .ds-lead-fields > input { flex: none; width: 100%; }
+}

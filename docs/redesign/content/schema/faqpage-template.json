@@ -1,0 +1,15 @@
+{
+  "_usage": "Генерировать из faq[] страницы при сборке: mainEntity — по одному объекту на вопрос, тексты 1:1 с видимым FAQ (обязательное условие Google — разметка должна совпадать с контентом страницы).",
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "{{faq[i].q}}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{faq[i].a_plaintext}}"
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+# dependencies
+node_modules/
+
+# next.js
+.next/
+out/
+
+# production
+build/
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files
+.env
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# screenshots (dev reference only)
+mobile-*.png
+
+# database
+data/*.db
+data/*.db-wal
+data/*.db-shm
+
+# uploads (user-uploaded images, keep directory structure)
+public/uploads/**/*
+!public/uploads/**/.gitkeep
+
+
+# original high-res photos (530MB+ originals, not for deploy)
+public/images/real works/
+
+# derived: фото с заблюренными номерами для внешних площадок
+# (генерируется из оригиналов — node scripts/blur-plates.mjs)
+public/images/avito/
+
+# claude
+.claude/
+
+# SEO temp (Wordstat/Direct caches, raw exports — артефакты в docs/seo/ коммитим)
+.tmp_wordstat/
+.tmp_xlsx/
+
+# кандидаты кадров для hero-видео (черновики генерации)
+.tmp_frames/
+
+# редизайн: временные исходники медиа и скриншоты чекпойнтов
+.tmp/
+docs/redesign/shots/
+public/anatomy/anatomy-assets.zip
+
+# Журнал заявок и CRM — данные бизнеса, не код
+data/*.jsonl
+
+# Private runtime data and deployment copies
+.env*
+!.env.example
+.next-*/
+data/*.db*
+data/*.sqlite*
+data/*.csv
