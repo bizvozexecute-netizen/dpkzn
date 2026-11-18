@@ -1,0 +1,400 @@
+[
+ {
+  "run": "alarms-desktop",
+  "url": "/ustanovka-signalizacii",
+  "formFactor": "desktop",
+  "lighthouse": "12.8.2",
+  "fetchTime": "2026-11-16T22:07:22.334Z",
+  "runtimeError": null,
+  "scores": {
+   "performance": 99,
+   "accessibility": 96,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 809,
+  "FCP_ms": 376,
+  "CLS": 0.057,
+  "TBT_ms": 21,
+  "SI_ms": 407,
+  "JS_kB": 183,
+  "total_kB": 528,
+  "failingAudits": [
+   "accessibility:color-contrast"
+  ]
+ },
+ {
+  "run": "alarms-mobile",
+  "url": "/ustanovka-signalizacii",
+  "formFactor": "mobile",
+  "lighthouse": "12.8.2",
+  "fetchTime": "2026-11-16T22:07:06.441Z",
+  "runtimeError": null,
+  "scores": {
+   "performance": 84,
+   "accessibility": 96,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 1724,
+  "FCP_ms": 1363,
+  "CLS": 0,
+  "TBT_ms": 632,
+  "SI_ms": 1363,
+  "JS_kB": 177,
+  "total_kB": 281,
+  "failingAudits": [
+   "performance:total-blocking-time (630 ms)",
+   "accessibility:color-contrast"
+  ]
+ },
+ {
+  "run": "article-desktop",
+  "url": "/blog/antidozhd-zachem-nuzhen",
+  "formFactor": "desktop",
+  "lighthouse": "12.8.2",
+  "fetchTime": "2026-11-16T22:08:19.234Z",
+  "runtimeError": null,
+  "scores": {
+   "performance": 100,
+   "accessibility": 96,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 662,
+  "FCP_ms": 331,
+  "CLS": 0,
+  "TBT_ms": 23,
+  "SI_ms": 331,
+  "JS_kB": 176,
+  "total_kB": 312,
+  "failingAudits": [
+   "accessibility:color-contrast"
+  ]
+ },
+ {
+  "run": "article-mobile",
+  "url": "/blog/antidozhd-zachem-nuzhen",
+  "formFactor": "mobile",
+  "lighthouse": "12.8.2",
+  "fetchTime": "2026-11-16T22:08:05.627Z",
+  "runtimeError": null,
+  "scores": {
+   "performance": 96,
+   "accessibility": 96,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 2728,
+  "FCP_ms": 1213,
+  "CLS": 0,
+  "TBT_ms": 109,
+  "SI_ms": 1213,
+  "JS_kB": 170,
+  "total_kB": 295,
+  "failingAudits": [
+   "performance:largest-contentful-paint (2.7 s)",
+   "accessibility:color-contrast"
+  ]
+ },
+ {
+  "run": "blog-desktop",
+  "url": "/blog",
+  "formFactor": "desktop",
+  "lighthouse": "12.8.2",
+  "fetchTime": "2026-11-16T22:09:19.689Z",
+  "runtimeError": null,
+  "scores": {
+   "performance": 100,
+   "accessibility": 96,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 722,
+  "FCP_ms": 337,
+  "CLS": 0.011,
+  "TBT_ms": 9,
+  "SI_ms": 340,
+  "JS_kB": 176,
+  "total_kB": 931,
+  "failingAudits": [
+   "accessibility:color-contrast"
+  ]
+ },
+ {
+  "run": "blog-mobile",
+  "url": "/blog",
+  "formFactor": "mobile",
+  "lighthouse": "12.8.2",
+  "fetchTime": "2026-11-16T22:09:03.183Z",
+  "runtimeError": null,
+  "scores": {
+   "performance": 78,
+   "accessibility": 96,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 3087,
+  "FCP_ms": 1215,
+  "CLS": 0,
+  "TBT_ms": 639,
+  "SI_ms": 1215,
+  "JS_kB": 170,
+  "total_kB": 383,
+  "failingAudits": [
+   "performance:largest-contentful-paint (3.1 s)",
+   "performance:total-blocking-time (640 ms)",
+   "accessibility:color-contrast"
+  ]
+ },
+ {
+  "run": "case-desktop",
+  "url": "/portfolio/bmw-420d-detailing",
+  "formFactor": "desktop",
+  "lighthouse": "12.8.2",
+  "fetchTime": "2026-11-16T22:07:51.461Z",
+  "runtimeError": null,
+  "scores": {
+   "performance": 100,
+   "accessibility": 96,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 795,
+  "FCP_ms": 345,
+  "CLS": 0,
+  "TBT_ms": 20,
+  "SI_ms": 345,
+  "JS_kB": 179,
+  "total_kB": 418,
+  "failingAudits": [
+   "accessibility:color-contrast"
+  ]
+ },
+ {
+  "run": "case-mobile",
+  "url": "/portfolio/bmw-420d-detailing",
+  "formFactor": "mobile",
+  "lighthouse": "12.8.2",
+  "fetchTime": "2026-11-16T22:07:37.760Z",
+  "runtimeError": null,
+  "scores": {
+   "performance": 90,
+   "accessibility": 96,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 2731,
+  "FCP_ms": 1210,
+  "CLS": 0,
+  "TBT_ms": 283,
+  "SI_ms": 1210,
+  "JS_kB": 173,
+  "total_kB": 288,
+  "failingAudits": [
+   "performance:largest-contentful-paint (2.7 s)",
+   "performance:total-blocking-time (280 ms)",
+   "accessibility:color-contrast"
+  ]
+ },
+ {
+  "run": "contacts-desktop",
+  "url": "/contacts",
+  "formFactor": "desktop",
+  "lighthouse": "12.8.2",
+  "fetchTime": "2026-11-16T22:09:50.862Z",
+  "runtimeError": null,
+  "scores": {
+   "performance": 100,
+   "accessibility": 96,
+   "best-practices": 96,
+   "seo": 100
+  },
+  "LCP_ms": 619,
+  "FCP_ms": 350,
+  "CLS": 0,
+  "TBT_ms": 3,
+  "SI_ms": 350,
+  "JS_kB": 176,
+  "total_kB": 296,
+  "failingAudits": [
+   "accessibility:color-contrast",
+   "best-practices:errors-in-console"
+  ]
+ },
+ {
+  "run": "contacts-mobile",
+  "url": "/contacts",
+  "formFactor": "mobile",
+  "lighthouse": "12.8.2",
+  "fetchTime": "2026-11-16T22:09:36.801Z",
+  "runtimeError": null,
+  "scores": {
+   "performance": 96,
+   "accessibility": 96,
+   "best-practices": 96,
+   "seo": 100
+  },
+  "LCP_ms": 2508,
+  "FCP_ms": 1066,
+  "CLS": 0,
+  "TBT_ms": 143,
+  "SI_ms": 1066,
+  "JS_kB": 168,
+  "total_kB": 212,
+  "failingAudits": [
+   "performance:largest-contentful-paint (2.5 s)",
+   "accessibility:color-contrast",
+   "best-practices:errors-in-console"
+  ]
+ },
+ {
+  "run": "home-desktop",
+  "url": "/",
+  "formFactor": "desktop",
+  "lighthouse": "12.8.2",
+  "fetchTime": "2026-11-16T22:06:10.475Z",
+  "runtimeError": null,
+  "scores": {
+   "performance": 99,
+   "accessibility": 96,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 856,
+  "FCP_ms": 427,
+  "CLS": 0,
+  "TBT_ms": 92,
+  "SI_ms": 876,
+  "JS_kB": 176,
+  "total_kB": 642,
+  "failingAudits": [
+   "accessibility:color-contrast"
+  ]
+ },
+ {
+  "run": "home-mobile",
+  "url": "/",
+  "formFactor": "mobile",
+  "lighthouse": "12.8.2",
+  "fetchTime": "2026-11-16T22:05:52.418Z",
+  "runtimeError": null,
+  "scores": {
+   "performance": 95,
+   "accessibility": 96,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 2512,
+  "FCP_ms": 1370,
+  "CLS": 0.034,
+  "TBT_ms": 163,
+  "SI_ms": 1370,
+  "JS_kB": 167,
+  "total_kB": 462,
+  "failingAudits": [
+   "performance:largest-contentful-paint (2.5 s)",
+   "accessibility:color-contrast"
+  ]
+ },
+ {
+  "run": "portfolio-desktop",
+  "url": "/portfolio",
+  "formFactor": "desktop",
+  "lighthouse": "12.8.2",
+  "fetchTime": "2026-11-16T22:08:48.534Z",
+  "runtimeError": null,
+  "scores": {
+   "performance": 100,
+   "accessibility": 96,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 667,
+  "FCP_ms": 330,
+  "CLS": 0,
+  "TBT_ms": 24,
+  "SI_ms": 365,
+  "JS_kB": 176,
+  "total_kB": 702,
+  "failingAudits": [
+   "accessibility:color-contrast"
+  ]
+ },
+ {
+  "run": "portfolio-mobile",
+  "url": "/portfolio",
+  "formFactor": "mobile",
+  "lighthouse": "12.8.2",
+  "fetchTime": "2026-11-16T22:08:33.302Z",
+  "runtimeError": null,
+  "scores": {
+   "performance": 71,
+   "accessibility": 96,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 3560,
+  "FCP_ms": 1224,
+  "CLS": 0,
+  "TBT_ms": 853,
+  "SI_ms": 1224,
+  "JS_kB": 170,
+  "total_kB": 676,
+  "failingAudits": [
+   "performance:largest-contentful-paint (3.6 s)",
+   "performance:total-blocking-time (850 ms)",
+   "accessibility:color-contrast"
+  ]
+ },
+ {
+  "run": "service-desktop",
+  "url": "/ppf",
+  "formFactor": "desktop",
+  "lighthouse": "12.8.2",
+  "fetchTime": "2026-11-16T22:06:48.308Z",
+  "runtimeError": null,
+  "scores": {
+   "performance": 83,
+   "accessibility": 96,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 754,
+  "FCP_ms": 381,
+  "CLS": 0.348,
+  "TBT_ms": 32,
+  "SI_ms": 473,
+  "JS_kB": 183,
+  "total_kB": 827,
+  "failingAudits": [
+   "performance:cumulative-layout-shift (0.348)",
+   "accessibility:color-contrast"
+  ]
+ },
+ {
+  "run": "service-mobile",
+  "url": "/ppf",
+  "formFactor": "mobile",
+  "lighthouse": "12.8.2",
+  "fetchTime": "2026-11-16T22:06:33.248Z",
+  "runtimeError": null,
+  "scores": {
+   "performance": 88,
+   "accessibility": 96,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "LCP_ms": 2337,
+  "FCP_ms": 1372,
+  "CLS": 0,
+  "TBT_ms": 421,
+  "SI_ms": 1372,
+  "JS_kB": 167,
+  "total_kB": 483,
+  "failingAudits": [
+   "performance:total-blocking-time (420 ms)",
+   "accessibility:color-contrast"
+  ]
+ }
+]

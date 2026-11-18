@@ -1,0 +1,23 @@
+// Формирует список URL аудита из локальной БД: node docs/audit/tools/pages.mjs > pages.json
+import Database from "better-sqlite3";
+const db = new Database("data/detailing.db", { readonly: true });
+const ALL = [320, 375, 414, 768, 1440];
+const services = db.prepare("select slug from services where is_active=1 or is_active is null order by sort_order").all().map((r) => r.slug);
+const works = db.prepare("select slug from works").all().map((r) => r.slug);
+const posts = db.prepare("select slug from blog_posts").all().map((r) => r.slug);
+const P = [];
+const add = (path, template, o = {}) => P.push({ path, template, widths: o.widths ?? ALL, full: o.full ?? [375, 1440], forms: o.forms ?? [] });
+add("/", "home", { forms: [375, 1440] });
+services.forEach((s, i) => add("/" + s, "service", { forms: [375], full: i < 19 ? [375] : [] }));
+add("/ustanovka-signalizacii/avtozapusk", "alarm", { forms: [375, 1440] });
+add("/ustanovka-signalizacii/vybor-signalizacii", "alarm", { forms: [375] });
+add("/portfolio", "portfolio-list", { forms: [375] });
+works.forEach((s, i) => add("/portfolio/" + s, "case", i < 2 ? { forms: [375] } : { widths: [375, 1440], full: [], forms: [] }));
+add("/blog", "blog-list", { forms: [375] });
+posts.forEach((s, i) => add("/blog/" + s, "article", i < 2 ? { forms: [375] } : { widths: [375], full: [], forms: [] }));
+add("/about", "about", { forms: [375] });
+add("/contacts", "contacts", { forms: [375, 1440] });
+add("/privacy", "privacy", {});
+add("/eta-stranica-ne-sushchestvuet", "404", { forms: [375] });
+add("/dev/ui", "dev-ui (не должен быть публичным)", { widths: [375], full: [] });
+console.log(JSON.stringify(P));

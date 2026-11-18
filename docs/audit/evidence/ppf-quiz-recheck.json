@@ -1,0 +1,68 @@
+[
+  {
+    "path": "/ppf",
+    "width": 375,
+    "steps": [
+      "Шаг 1 из 3",
+      "Шаг 2 из 3",
+      "Шаг 3 из 3"
+    ],
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_FAILED"
+    ],
+    "submits": [
+      {
+        "status": 200,
+        "body": "{\"success\":true}"
+      }
+    ],
+    "telFontSize": "16px",
+    "telInputMode": "tel",
+    "emptyError": "Введите корректный номер",
+    "shortError": "Введите корректный номер",
+    "submitsAfterInvalid": 0,
+    "successVisible": true,
+    "successText": "Заявка у мастера Ответим в рабочее время WhatsApp Telegram",
+    "persistedLeadDelta": 1,
+    "lastLead": {
+      "phoneMasked": "+•••••••••67",
+      "source": "quiz:ppf",
+      "service": "Антигравийная плёнка (PPF) в Казани",
+      "car_class": "1 класс"
+    },
+    "ok": true
+  },
+  {
+    "path": "/ppf",
+    "width": 1440,
+    "steps": [
+      "Шаг 1 из 3",
+      "Шаг 2 из 3",
+      "Шаг 3 из 3"
+    ],
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_FAILED"
+    ],
+    "submits": [
+      {
+        "status": 200,
+        "body": "{\"success\":true}"
+      }
+    ],
+    "telFontSize": "16px",
+    "telInputMode": "tel",
+    "emptyError": "Введите корректный номер",
+    "shortError": "Введите корректный номер",
+    "submitsAfterInvalid": 0,
+    "successVisible": true,
+    "successText": "Заявка у мастера Ответим в рабочее время WhatsApp Telegram",
+    "persistedLeadDelta": 1,
+    "lastLead": {
+      "phoneMasked": "+•••••••••67",
+      "source": "quiz:ppf",
+      "service": "Антигравийная плёнка (PPF) в Казани",
+      "car_class": "1 класс"
+    },
+    "ok": true
+  }
+]
