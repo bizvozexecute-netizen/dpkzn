@@ -1,0 +1,1029 @@
+[
+  {
+    "name": "entry-",
+    "width": 375,
+    "ok": true,
+    "status": 200,
+    "h1": "Премиальный детейлинг в Казани",
+    "h1Fold": true,
+    "telFold": true,
+    "ctaFold": true,
+    "priceFold": false,
+    "stickyAfterScroll": true,
+    "inputFontPx": 16,
+    "intercepted": 1,
+    "confirmationVisible": false,
+    "utm": {
+      "utm_source": "yandex",
+      "utm_medium": "cpc",
+      "utm_campaign": "audit_test",
+      "utm_term": "test",
+      "yclid": "999000111"
+    },
+    "yclid": "999000111",
+    "attributionKeys": [
+      "first_utm_source",
+      "first_utm_medium",
+      "first_utm_campaign",
+      "first_landing",
+      "first_ts",
+      "touch_source"
+    ],
+    "sourcePage": "/",
+    "shot": ".studio-tmp/browser-repair/forms-e2e-screens/entry--375-fold.jpg",
+    "shotSubmitted": ".studio-tmp/browser-repair/forms-e2e-screens/entry--375-submitted.jpg",
+    "persistedLeadDelta": 1,
+    "submissions": 1,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_FAILED"
+    ]
+  },
+  {
+    "name": "entry-contacts",
+    "width": 375,
+    "ok": true,
+    "status": 200,
+    "h1": "Контакты",
+    "h1Fold": true,
+    "telFold": true,
+    "ctaFold": false,
+    "priceFold": false,
+    "stickyAfterScroll": true,
+    "inputFontPx": 16,
+    "intercepted": 1,
+    "confirmationVisible": true,
+    "utm": {
+      "utm_source": "yandex",
+      "utm_medium": "cpc",
+      "utm_campaign": "audit_test",
+      "utm_term": "test",
+      "yclid": "999000111"
+    },
+    "yclid": "999000111",
+    "attributionKeys": [
+      "first_utm_source",
+      "first_utm_medium",
+      "first_utm_campaign",
+      "first_landing",
+      "first_ts",
+      "touch_source"
+    ],
+    "sourcePage": "/contacts",
+    "shot": ".studio-tmp/browser-repair/forms-e2e-screens/entry-contacts-375-fold.jpg",
+    "shotSubmitted": ".studio-tmp/browser-repair/forms-e2e-screens/entry-contacts-375-submitted.jpg",
+    "persistedLeadDelta": 1,
+    "submissions": 1,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+      "Failed to load resource: net::ERR_FAILED"
+    ]
+  },
+  {
+    "name": "entry-about",
+    "width": 375,
+    "ok": true,
+    "status": 200,
+    "h1": "О студии Detailing Place",
+    "h1Fold": true,
+    "telFold": true,
+    "ctaFold": false,
+    "priceFold": false,
+    "stickyAfterScroll": true,
+    "inputFontPx": 16,
+    "intercepted": 1,
+    "confirmationVisible": true,
+    "utm": {
+      "utm_source": "yandex",
+      "utm_medium": "cpc",
+      "utm_campaign": "audit_test",
+      "utm_term": "test",
+      "yclid": "999000111"
+    },
+    "yclid": "999000111",
+    "attributionKeys": [
+      "first_utm_source",
+      "first_utm_medium",
+      "first_utm_campaign",
+      "first_landing",
+      "first_ts",
+      "touch_source"
+    ],
+    "sourcePage": "/about",
+    "shot": ".studio-tmp/browser-repair/forms-e2e-screens/entry-about-375-fold.jpg",
+    "shotSubmitted": ".studio-tmp/browser-repair/forms-e2e-screens/entry-about-375-submitted.jpg",
+    "persistedLeadDelta": 1,
+    "submissions": 1,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_FAILED"
+    ]
+  },
+  {
+    "name": "entry-portfolio",
+    "width": 375,
+    "ok": true,
+    "status": 200,
+    "h1": "Портфолио",
+    "h1Fold": true,
+    "telFold": true,
+    "ctaFold": true,
+    "priceFold": false,
+    "stickyAfterScroll": true,
+    "inputFontPx": 16,
+    "intercepted": 1,
+    "confirmationVisible": true,
+    "utm": {
+      "utm_source": "yandex",
+      "utm_medium": "cpc",
+      "utm_campaign": "audit_test",
+      "utm_term": "test",
+      "yclid": "999000111"
+    },
+    "yclid": "999000111",
+    "attributionKeys": [
+      "first_utm_source",
+      "first_utm_medium",
+      "first_utm_campaign",
+      "first_landing",
+      "first_ts",
+      "touch_source"
+    ],
+    "sourcePage": "/portfolio",
+    "shot": ".studio-tmp/browser-repair/forms-e2e-screens/entry-portfolio-375-fold.jpg",
+    "shotSubmitted": ".studio-tmp/browser-repair/forms-e2e-screens/entry-portfolio-375-submitted.jpg",
+    "persistedLeadDelta": 1,
+    "submissions": 1,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_FAILED"
+    ]
+  },
+  {
+    "name": "entry-blog",
+    "width": 375,
+    "ok": true,
+    "status": 200,
+    "h1": "Блог",
+    "h1Fold": true,
+    "telFold": true,
+    "ctaFold": true,
+    "priceFold": false,
+    "stickyAfterScroll": true,
+    "form": "нет видимого поля телефона (квиз/кнопки)",
+    "shot": ".studio-tmp/browser-repair/forms-e2e-screens/entry-blog-375-fold.jpg",
+    "persistedLeadDelta": 0,
+    "submissions": 0,
+    "consoleErrors": []
+  },
+  {
+    "name": "entry-blog_antidozhd-zachem-nuzhen",
+    "width": 375,
+    "ok": true,
+    "status": 200,
+    "h1": "Антидождь на лобовое стекло: зачем нужен и сколько служит",
+    "h1Fold": true,
+    "telFold": true,
+    "ctaFold": false,
+    "priceFold": false,
+    "stickyAfterScroll": true,
+    "inputFontPx": 16,
+    "intercepted": 1,
+    "confirmationVisible": true,
+    "utm": {
+      "utm_source": "yandex",
+      "utm_medium": "cpc",
+      "utm_campaign": "audit_test",
+      "utm_term": "test",
+      "yclid": "999000111"
+    },
+    "yclid": "999000111",
+    "attributionKeys": [
+      "first_utm_source",
+      "first_utm_medium",
+      "first_utm_campaign",
+      "first_landing",
+      "first_ts",
+      "touch_source"
+    ],
+    "sourcePage": "/blog/antidozhd-zachem-nuzhen",
+    "shot": ".studio-tmp/browser-repair/forms-e2e-screens/entry-blog_antidozhd-zachem-nuzhen-375-fold.jpg",
+    "shotSubmitted": ".studio-tmp/browser-repair/forms-e2e-screens/entry-blog_antidozhd-zachem-nuzhen-375-submitted.jpg",
+    "persistedLeadDelta": 1,
+    "submissions": 1,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_FAILED"
+    ]
+  },
+  {
+    "name": "entry-portfolio_bmw-420d-detailing",
+    "width": 375,
+    "ok": true,
+    "status": 200,
+    "h1": "BMW 420d — Комплексный детейлинг",
+    "h1Fold": true,
+    "telFold": true,
+    "ctaFold": true,
+    "priceFold": false,
+    "stickyAfterScroll": true,
+    "inputFontPx": 16,
+    "intercepted": 1,
+    "confirmationVisible": true,
+    "utm": {
+      "utm_source": "yandex",
+      "utm_medium": "cpc",
+      "utm_campaign": "audit_test",
+      "utm_term": "test",
+      "yclid": "999000111"
+    },
+    "yclid": "999000111",
+    "attributionKeys": [
+      "first_utm_source",
+      "first_utm_medium",
+      "first_utm_campaign",
+      "first_landing",
+      "first_ts",
+      "touch_source"
+    ],
+    "sourcePage": "/portfolio/bmw-420d-detailing",
+    "shot": ".studio-tmp/browser-repair/forms-e2e-screens/entry-portfolio_bmw-420d-detailing-375-fold.jpg",
+    "shotSubmitted": ".studio-tmp/browser-repair/forms-e2e-screens/entry-portfolio_bmw-420d-detailing-375-submitted.jpg",
+    "persistedLeadDelta": 1,
+    "submissions": 1,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_FAILED"
+    ]
+  },
+  {
+    "name": "entry-ppf",
+    "width": 375,
+    "ok": true,
+    "status": 200,
+    "h1": "Антигравийная плёнка (PPF) в Казани",
+    "h1Fold": true,
+    "telFold": true,
+    "ctaFold": true,
+    "priceFold": false,
+    "stickyAfterScroll": true,
+    "form": "нет видимого поля телефона (квиз/кнопки)",
+    "shot": ".studio-tmp/browser-repair/forms-e2e-screens/entry-ppf-375-fold.jpg",
+    "persistedLeadDelta": 0,
+    "submissions": 0,
+    "consoleErrors": []
+  },
+  {
+    "name": "entry-polirovka",
+    "width": 375,
+    "ok": true,
+    "status": 200,
+    "h1": "Полировка кузова авто в Казани",
+    "h1Fold": true,
+    "telFold": true,
+    "ctaFold": true,
+    "priceFold": false,
+    "stickyAfterScroll": true,
+    "inputFontPx": 16,
+    "intercepted": 1,
+    "confirmationVisible": true,
+    "utm": {
+      "utm_source": "yandex",
+      "utm_medium": "cpc",
+      "utm_campaign": "audit_test",
+      "utm_term": "test",
+      "yclid": "999000111"
+    },
+    "yclid": "999000111",
+    "attributionKeys": [
+      "first_utm_source",
+      "first_utm_medium",
+      "first_utm_campaign",
+      "first_landing",
+      "first_ts",
+      "touch_source"
+    ],
+    "sourcePage": "/polirovka",
+    "shot": ".studio-tmp/browser-repair/forms-e2e-screens/entry-polirovka-375-fold.jpg",
+    "shotSubmitted": ".studio-tmp/browser-repair/forms-e2e-screens/entry-polirovka-375-submitted.jpg",
+    "persistedLeadDelta": 1,
+    "submissions": 1,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_FAILED"
+    ]
+  },
+  {
+    "name": "entry-himchistka",
+    "width": 375,
+    "ok": true,
+    "status": 200,
+    "h1": "Химчистка салона авто в Казани",
+    "h1Fold": true,
+    "telFold": true,
+    "ctaFold": true,
+    "priceFold": false,
+    "stickyAfterScroll": true,
+    "inputFontPx": 16,
+    "intercepted": 1,
+    "confirmationVisible": true,
+    "utm": {
+      "utm_source": "yandex",
+      "utm_medium": "cpc",
+      "utm_campaign": "audit_test",
+      "utm_term": "test",
+      "yclid": "999000111"
+    },
+    "yclid": "999000111",
+    "attributionKeys": [
+      "first_utm_source",
+      "first_utm_medium",
+      "first_utm_campaign",
+      "first_landing",
+      "first_ts",
+      "touch_source"
+    ],
+    "sourcePage": "/himchistka",
+    "shot": ".studio-tmp/browser-repair/forms-e2e-screens/entry-himchistka-375-fold.jpg",
+    "shotSubmitted": ".studio-tmp/browser-repair/forms-e2e-screens/entry-himchistka-375-submitted.jpg",
+    "persistedLeadDelta": 1,
+    "submissions": 1,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_FAILED"
+    ]
+  },
+  {
+    "name": "entry-shumoizolyaciya",
+    "width": 375,
+    "ok": true,
+    "status": 200,
+    "h1": "Шумоизоляция автомобиля в Казани",
+    "h1Fold": true,
+    "telFold": true,
+    "ctaFold": true,
+    "priceFold": false,
+    "stickyAfterScroll": true,
+    "inputFontPx": 16,
+    "intercepted": 1,
+    "confirmationVisible": true,
+    "utm": {
+      "utm_source": "yandex",
+      "utm_medium": "cpc",
+      "utm_campaign": "audit_test",
+      "utm_term": "test",
+      "yclid": "999000111"
+    },
+    "yclid": "999000111",
+    "attributionKeys": [
+      "first_utm_source",
+      "first_utm_medium",
+      "first_utm_campaign",
+      "first_landing",
+      "first_ts",
+      "touch_source"
+    ],
+    "sourcePage": "/shumoizolyaciya",
+    "shot": ".studio-tmp/browser-repair/forms-e2e-screens/entry-shumoizolyaciya-375-fold.jpg",
+    "shotSubmitted": ".studio-tmp/browser-repair/forms-e2e-screens/entry-shumoizolyaciya-375-submitted.jpg",
+    "persistedLeadDelta": 1,
+    "submissions": 1,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_FAILED"
+    ]
+  },
+  {
+    "name": "entry-antihrom",
+    "width": 375,
+    "ok": true,
+    "status": 200,
+    "h1": "Антихром автомобиля в Казани",
+    "h1Fold": true,
+    "telFold": true,
+    "ctaFold": true,
+    "priceFold": false,
+    "stickyAfterScroll": true,
+    "inputFontPx": 16,
+    "intercepted": 1,
+    "confirmationVisible": true,
+    "utm": {
+      "utm_source": "yandex",
+      "utm_medium": "cpc",
+      "utm_campaign": "audit_test",
+      "utm_term": "test",
+      "yclid": "999000111"
+    },
+    "yclid": "999000111",
+    "attributionKeys": [
+      "first_utm_source",
+      "first_utm_medium",
+      "first_utm_campaign",
+      "first_landing",
+      "first_ts",
+      "touch_source"
+    ],
+    "sourcePage": "/antihrom",
+    "shot": ".studio-tmp/browser-repair/forms-e2e-screens/entry-antihrom-375-fold.jpg",
+    "shotSubmitted": ".studio-tmp/browser-repair/forms-e2e-screens/entry-antihrom-375-submitted.jpg",
+    "persistedLeadDelta": 1,
+    "submissions": 1,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_FAILED"
+    ]
+  },
+  {
+    "name": "entry-tonirovka",
+    "width": 375,
+    "ok": true,
+    "status": 200,
+    "h1": "Тонировка авто в Казани",
+    "h1Fold": true,
+    "telFold": true,
+    "ctaFold": true,
+    "priceFold": false,
+    "stickyAfterScroll": true,
+    "inputFontPx": 16,
+    "intercepted": 1,
+    "confirmationVisible": true,
+    "utm": {
+      "utm_source": "yandex",
+      "utm_medium": "cpc",
+      "utm_campaign": "audit_test",
+      "utm_term": "test",
+      "yclid": "999000111"
+    },
+    "yclid": "999000111",
+    "attributionKeys": [
+      "first_utm_source",
+      "first_utm_medium",
+      "first_utm_campaign",
+      "first_landing",
+      "first_ts",
+      "touch_source"
+    ],
+    "sourcePage": "/tonirovka",
+    "shot": ".studio-tmp/browser-repair/forms-e2e-screens/entry-tonirovka-375-fold.jpg",
+    "shotSubmitted": ".studio-tmp/browser-repair/forms-e2e-screens/entry-tonirovka-375-submitted.jpg",
+    "persistedLeadDelta": 1,
+    "submissions": 1,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_FAILED"
+    ]
+  },
+  {
+    "name": "entry-ustanovka-linz",
+    "width": 375,
+    "ok": true,
+    "status": 200,
+    "h1": "Установка Bi-LED линз в Казани",
+    "h1Fold": true,
+    "telFold": true,
+    "ctaFold": true,
+    "priceFold": false,
+    "stickyAfterScroll": true,
+    "inputFontPx": 16,
+    "intercepted": 1,
+    "confirmationVisible": true,
+    "utm": {
+      "utm_source": "yandex",
+      "utm_medium": "cpc",
+      "utm_campaign": "audit_test",
+      "utm_term": "test",
+      "yclid": "999000111"
+    },
+    "yclid": "999000111",
+    "attributionKeys": [
+      "first_utm_source",
+      "first_utm_medium",
+      "first_utm_campaign",
+      "first_landing",
+      "first_ts",
+      "touch_source"
+    ],
+    "sourcePage": "/ustanovka-linz",
+    "shot": ".studio-tmp/browser-repair/forms-e2e-screens/entry-ustanovka-linz-375-fold.jpg",
+    "shotSubmitted": ".studio-tmp/browser-repair/forms-e2e-screens/entry-ustanovka-linz-375-submitted.jpg",
+    "persistedLeadDelta": 1,
+    "submissions": 1,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_FAILED"
+    ]
+  },
+  {
+    "name": "entry-regulirovka-far",
+    "width": 375,
+    "ok": true,
+    "status": 200,
+    "h1": "Ремонт и регулировка фар в Казани",
+    "h1Fold": true,
+    "telFold": true,
+    "ctaFold": true,
+    "priceFold": false,
+    "stickyAfterScroll": true,
+    "inputFontPx": 16,
+    "intercepted": 1,
+    "confirmationVisible": true,
+    "utm": {
+      "utm_source": "yandex",
+      "utm_medium": "cpc",
+      "utm_campaign": "audit_test",
+      "utm_term": "test",
+      "yclid": "999000111"
+    },
+    "yclid": "999000111",
+    "attributionKeys": [
+      "first_utm_source",
+      "first_utm_medium",
+      "first_utm_campaign",
+      "first_landing",
+      "first_ts",
+      "touch_source"
+    ],
+    "sourcePage": "/regulirovka-far",
+    "shot": ".studio-tmp/browser-repair/forms-e2e-screens/entry-regulirovka-far-375-fold.jpg",
+    "shotSubmitted": ".studio-tmp/browser-repair/forms-e2e-screens/entry-regulirovka-far-375-submitted.jpg",
+    "persistedLeadDelta": 1,
+    "submissions": 1,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_FAILED"
+    ]
+  },
+  {
+    "name": "entry-polirovka-stekol",
+    "width": 375,
+    "ok": true,
+    "status": 200,
+    "h1": "Полировка стёкол автомобиля в Казани",
+    "h1Fold": true,
+    "telFold": true,
+    "ctaFold": true,
+    "priceFold": false,
+    "stickyAfterScroll": true,
+    "inputFontPx": 16,
+    "intercepted": 1,
+    "confirmationVisible": true,
+    "utm": {
+      "utm_source": "yandex",
+      "utm_medium": "cpc",
+      "utm_campaign": "audit_test",
+      "utm_term": "test",
+      "yclid": "999000111"
+    },
+    "yclid": "999000111",
+    "attributionKeys": [
+      "first_utm_source",
+      "first_utm_medium",
+      "first_utm_campaign",
+      "first_landing",
+      "first_ts",
+      "touch_source"
+    ],
+    "sourcePage": "/polirovka-stekol",
+    "shot": ".studio-tmp/browser-repair/forms-e2e-screens/entry-polirovka-stekol-375-fold.jpg",
+    "shotSubmitted": ".studio-tmp/browser-repair/forms-e2e-screens/entry-polirovka-stekol-375-submitted.jpg",
+    "persistedLeadDelta": 1,
+    "submissions": 1,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_FAILED"
+    ]
+  },
+  {
+    "name": "entry-polirovka-far",
+    "width": 375,
+    "ok": true,
+    "status": 200,
+    "h1": "Полировка фар автомобиля в Казани",
+    "h1Fold": true,
+    "telFold": true,
+    "ctaFold": true,
+    "priceFold": false,
+    "stickyAfterScroll": true,
+    "inputFontPx": 16,
+    "intercepted": 1,
+    "confirmationVisible": true,
+    "utm": {
+      "utm_source": "yandex",
+      "utm_medium": "cpc",
+      "utm_campaign": "audit_test",
+      "utm_term": "test",
+      "yclid": "999000111"
+    },
+    "yclid": "999000111",
+    "attributionKeys": [
+      "first_utm_source",
+      "first_utm_medium",
+      "first_utm_campaign",
+      "first_landing",
+      "first_ts",
+      "touch_source"
+    ],
+    "sourcePage": "/polirovka-far",
+    "shot": ".studio-tmp/browser-repair/forms-e2e-screens/entry-polirovka-far-375-fold.jpg",
+    "shotSubmitted": ".studio-tmp/browser-repair/forms-e2e-screens/entry-polirovka-far-375-submitted.jpg",
+    "persistedLeadDelta": 1,
+    "submissions": 1,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_FAILED"
+    ]
+  },
+  {
+    "name": "entry-antidozhd",
+    "width": 375,
+    "ok": true,
+    "status": 200,
+    "h1": "Антидождь для автомобиля в Казани",
+    "h1Fold": true,
+    "telFold": true,
+    "ctaFold": true,
+    "priceFold": false,
+    "stickyAfterScroll": true,
+    "inputFontPx": 16,
+    "intercepted": 1,
+    "confirmationVisible": true,
+    "utm": {
+      "utm_source": "yandex",
+      "utm_medium": "cpc",
+      "utm_campaign": "audit_test",
+      "utm_term": "test",
+      "yclid": "999000111"
+    },
+    "yclid": "999000111",
+    "attributionKeys": [
+      "first_utm_source",
+      "first_utm_medium",
+      "first_utm_campaign",
+      "first_landing",
+      "first_ts",
+      "touch_source"
+    ],
+    "sourcePage": "/antidozhd",
+    "shot": ".studio-tmp/browser-repair/forms-e2e-screens/entry-antidozhd-375-fold.jpg",
+    "shotSubmitted": ".studio-tmp/browser-repair/forms-e2e-screens/entry-antidozhd-375-submitted.jpg",
+    "persistedLeadDelta": 1,
+    "submissions": 1,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_FAILED"
+    ]
+  },
+  {
+    "name": "entry-remont-vmyatin",
+    "width": 375,
+    "ok": true,
+    "status": 200,
+    "h1": "Ремонт вмятин без покраски в Казани (PDR)",
+    "h1Fold": true,
+    "telFold": true,
+    "ctaFold": true,
+    "priceFold": false,
+    "stickyAfterScroll": true,
+    "inputFontPx": 16,
+    "intercepted": 1,
+    "confirmationVisible": true,
+    "utm": {
+      "utm_source": "yandex",
+      "utm_medium": "cpc",
+      "utm_campaign": "audit_test",
+      "utm_term": "test",
+      "yclid": "999000111"
+    },
+    "yclid": "999000111",
+    "attributionKeys": [
+      "first_utm_source",
+      "first_utm_medium",
+      "first_utm_campaign",
+      "first_landing",
+      "first_ts",
+      "touch_source"
+    ],
+    "sourcePage": "/remont-vmyatin",
+    "shot": ".studio-tmp/browser-repair/forms-e2e-screens/entry-remont-vmyatin-375-fold.jpg",
+    "shotSubmitted": ".studio-tmp/browser-repair/forms-e2e-screens/entry-remont-vmyatin-375-submitted.jpg",
+    "persistedLeadDelta": 1,
+    "submissions": 1,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_FAILED"
+    ]
+  },
+  {
+    "name": "entry-zashchitnye-pokrytiya",
+    "width": 375,
+    "ok": true,
+    "status": 200,
+    "h1": "Защитные покрытия кузова в Казани",
+    "h1Fold": true,
+    "telFold": true,
+    "ctaFold": true,
+    "priceFold": false,
+    "stickyAfterScroll": true,
+    "inputFontPx": 16,
+    "intercepted": 1,
+    "confirmationVisible": true,
+    "utm": {
+      "utm_source": "yandex",
+      "utm_medium": "cpc",
+      "utm_campaign": "audit_test",
+      "utm_term": "test",
+      "yclid": "999000111"
+    },
+    "yclid": "999000111",
+    "attributionKeys": [
+      "first_utm_source",
+      "first_utm_medium",
+      "first_utm_campaign",
+      "first_landing",
+      "first_ts",
+      "touch_source"
+    ],
+    "sourcePage": "/zashchitnye-pokrytiya",
+    "shot": ".studio-tmp/browser-repair/forms-e2e-screens/entry-zashchitnye-pokrytiya-375-fold.jpg",
+    "shotSubmitted": ".studio-tmp/browser-repair/forms-e2e-screens/entry-zashchitnye-pokrytiya-375-submitted.jpg",
+    "persistedLeadDelta": 1,
+    "submissions": 1,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_FAILED"
+    ]
+  },
+  {
+    "name": "entry-ustanovka-signalizacii",
+    "width": 375,
+    "ok": true,
+    "status": 200,
+    "h1": "Установка авто­сигнализации в Казани",
+    "h1Fold": true,
+    "telFold": true,
+    "ctaFold": true,
+    "priceFold": false,
+    "stickyAfterScroll": true,
+    "inputFontPx": 16,
+    "intercepted": 1,
+    "confirmationVisible": true,
+    "utm": {
+      "utm_source": "yandex",
+      "utm_medium": "cpc",
+      "utm_campaign": "audit_test",
+      "utm_term": "test",
+      "yclid": "999000111"
+    },
+    "yclid": "999000111",
+    "attributionKeys": [
+      "first_utm_source",
+      "first_utm_medium",
+      "first_utm_campaign",
+      "first_landing",
+      "first_ts",
+      "touch_source"
+    ],
+    "sourcePage": "/ustanovka-signalizacii",
+    "shot": ".studio-tmp/browser-repair/forms-e2e-screens/entry-ustanovka-signalizacii-375-fold.jpg",
+    "shotSubmitted": ".studio-tmp/browser-repair/forms-e2e-screens/entry-ustanovka-signalizacii-375-submitted.jpg",
+    "persistedLeadDelta": 1,
+    "submissions": 1,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_FAILED"
+    ]
+  },
+  {
+    "name": "entry-broneplenka",
+    "width": 375,
+    "ok": true,
+    "status": 200,
+    "h1": "Бронепленка на авто в Казани",
+    "h1Fold": true,
+    "telFold": true,
+    "ctaFold": true,
+    "priceFold": false,
+    "stickyAfterScroll": true,
+    "inputFontPx": 16,
+    "intercepted": 1,
+    "confirmationVisible": true,
+    "utm": {
+      "utm_source": "yandex",
+      "utm_medium": "cpc",
+      "utm_campaign": "audit_test",
+      "utm_term": "test",
+      "yclid": "999000111"
+    },
+    "yclid": "999000111",
+    "attributionKeys": [
+      "first_utm_source",
+      "first_utm_medium",
+      "first_utm_campaign",
+      "first_landing",
+      "first_ts",
+      "touch_source"
+    ],
+    "sourcePage": "/broneplenka",
+    "shot": ".studio-tmp/browser-repair/forms-e2e-screens/entry-broneplenka-375-fold.jpg",
+    "shotSubmitted": ".studio-tmp/browser-repair/forms-e2e-screens/entry-broneplenka-375-submitted.jpg",
+    "persistedLeadDelta": 1,
+    "submissions": 1,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_FAILED"
+    ]
+  },
+  {
+    "name": "entry-oklejka-avto",
+    "width": 375,
+    "ok": true,
+    "status": 200,
+    "h1": "Оклейка авто плёнкой в Казани",
+    "h1Fold": true,
+    "telFold": true,
+    "ctaFold": true,
+    "priceFold": false,
+    "stickyAfterScroll": true,
+    "inputFontPx": 16,
+    "intercepted": 1,
+    "confirmationVisible": true,
+    "utm": {
+      "utm_source": "yandex",
+      "utm_medium": "cpc",
+      "utm_campaign": "audit_test",
+      "utm_term": "test",
+      "yclid": "999000111"
+    },
+    "yclid": "999000111",
+    "attributionKeys": [
+      "first_utm_source",
+      "first_utm_medium",
+      "first_utm_campaign",
+      "first_landing",
+      "first_ts",
+      "touch_source"
+    ],
+    "sourcePage": "/oklejka-avto",
+    "shot": ".studio-tmp/browser-repair/forms-e2e-screens/entry-oklejka-avto-375-fold.jpg",
+    "shotSubmitted": ".studio-tmp/browser-repair/forms-e2e-screens/entry-oklejka-avto-375-submitted.jpg",
+    "persistedLeadDelta": 1,
+    "submissions": 1,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_FAILED"
+    ]
+  },
+  {
+    "name": "entry-detayling-kuzova",
+    "width": 375,
+    "ok": true,
+    "status": 200,
+    "h1": "Детейлинг кузова в Казани",
+    "h1Fold": true,
+    "telFold": true,
+    "ctaFold": true,
+    "priceFold": false,
+    "stickyAfterScroll": true,
+    "inputFontPx": 16,
+    "intercepted": 1,
+    "confirmationVisible": true,
+    "utm": {
+      "utm_source": "yandex",
+      "utm_medium": "cpc",
+      "utm_campaign": "audit_test",
+      "utm_term": "test",
+      "yclid": "999000111"
+    },
+    "yclid": "999000111",
+    "attributionKeys": [
+      "first_utm_source",
+      "first_utm_medium",
+      "first_utm_campaign",
+      "first_landing",
+      "first_ts",
+      "touch_source"
+    ],
+    "sourcePage": "/detayling-kuzova",
+    "shot": ".studio-tmp/browser-repair/forms-e2e-screens/entry-detayling-kuzova-375-fold.jpg",
+    "shotSubmitted": ".studio-tmp/browser-repair/forms-e2e-screens/entry-detayling-kuzova-375-submitted.jpg",
+    "persistedLeadDelta": 1,
+    "submissions": 1,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_FAILED"
+    ]
+  },
+  {
+    "name": "entry-vyezdnoj-detayling",
+    "width": 375,
+    "ok": true,
+    "status": 200,
+    "h1": "Выездной детейлинг в Казани",
+    "h1Fold": true,
+    "telFold": true,
+    "ctaFold": true,
+    "priceFold": false,
+    "stickyAfterScroll": true,
+    "inputFontPx": 16,
+    "intercepted": 1,
+    "confirmationVisible": true,
+    "utm": {
+      "utm_source": "yandex",
+      "utm_medium": "cpc",
+      "utm_campaign": "audit_test",
+      "utm_term": "test",
+      "yclid": "999000111"
+    },
+    "yclid": "999000111",
+    "attributionKeys": [
+      "first_utm_source",
+      "first_utm_medium",
+      "first_utm_campaign",
+      "first_landing",
+      "first_ts",
+      "touch_source"
+    ],
+    "sourcePage": "/vyezdnoj-detayling",
+    "shot": ".studio-tmp/browser-repair/forms-e2e-screens/entry-vyezdnoj-detayling-375-fold.jpg",
+    "shotSubmitted": ".studio-tmp/browser-repair/forms-e2e-screens/entry-vyezdnoj-detayling-375-submitted.jpg",
+    "persistedLeadDelta": 1,
+    "submissions": 1,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_FAILED"
+    ]
+  },
+  {
+    "name": "entry-antikor",
+    "width": 375,
+    "ok": true,
+    "status": 200,
+    "h1": "Антикор автомобиля в Казани",
+    "h1Fold": true,
+    "telFold": true,
+    "ctaFold": false,
+    "priceFold": false,
+    "stickyAfterScroll": true,
+    "form": "нет видимого поля телефона (квиз/кнопки)",
+    "shot": ".studio-tmp/browser-repair/forms-e2e-screens/entry-antikor-375-fold.jpg",
+    "persistedLeadDelta": 0,
+    "submissions": 0,
+    "consoleErrors": []
+  },
+  {
+    "name": "entry-ustanovka-signalizacii_avtozapusk",
+    "width": 375,
+    "ok": true,
+    "status": 200,
+    "h1": "Установка сигнализации с автозапуском в Казани",
+    "h1Fold": true,
+    "telFold": true,
+    "ctaFold": true,
+    "priceFold": false,
+    "stickyAfterScroll": true,
+    "inputFontPx": 16,
+    "intercepted": 1,
+    "confirmationVisible": true,
+    "utm": {
+      "utm_source": "yandex",
+      "utm_medium": "cpc",
+      "utm_campaign": "audit_test",
+      "utm_term": "test",
+      "yclid": "999000111"
+    },
+    "yclid": "999000111",
+    "attributionKeys": [
+      "first_utm_source",
+      "first_utm_medium",
+      "first_utm_campaign",
+      "first_landing",
+      "first_ts",
+      "touch_source"
+    ],
+    "sourcePage": "/ustanovka-signalizacii/avtozapusk",
+    "shot": ".studio-tmp/browser-repair/forms-e2e-screens/entry-ustanovka-signalizacii_avtozapusk-375-fold.jpg",
+    "shotSubmitted": ".studio-tmp/browser-repair/forms-e2e-screens/entry-ustanovka-signalizacii_avtozapusk-375-submitted.jpg",
+    "persistedLeadDelta": 1,
+    "submissions": 1,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_FAILED"
+    ]
+  },
+  {
+    "name": "entry-ustanovka-signalizacii_vybor-signalizacii",
+    "width": 375,
+    "ok": true,
+    "status": 200,
+    "h1": "Подбор охранной системы для автомобиля в Казани",
+    "h1Fold": true,
+    "telFold": true,
+    "ctaFold": true,
+    "priceFold": false,
+    "stickyAfterScroll": true,
+    "inputFontPx": 16,
+    "intercepted": 1,
+    "confirmationVisible": true,
+    "utm": {
+      "utm_source": "yandex",
+      "utm_medium": "cpc",
+      "utm_campaign": "audit_test",
+      "utm_term": "test",
+      "yclid": "999000111"
+    },
+    "yclid": "999000111",
+    "attributionKeys": [
+      "first_utm_source",
+      "first_utm_medium",
+      "first_utm_campaign",
+      "first_landing",
+      "first_ts",
+      "touch_source"
+    ],
+    "sourcePage": "/ustanovka-signalizacii/vybor-signalizacii",
+    "shot": ".studio-tmp/browser-repair/forms-e2e-screens/entry-ustanovka-signalizacii_vybor-signalizacii-375-fold.jpg",
+    "shotSubmitted": ".studio-tmp/browser-repair/forms-e2e-screens/entry-ustanovka-signalizacii_vybor-signalizacii-375-submitted.jpg",
+    "persistedLeadDelta": 1,
+    "submissions": 1,
+    "consoleErrors": [
+      "Failed to load resource: net::ERR_FAILED"
+    ]
+  }
+]

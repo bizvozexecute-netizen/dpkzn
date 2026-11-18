@@ -1,0 +1,98 @@
+[
+  {
+    "path": "/",
+    "width": 375,
+    "steps": [
+      "Шаг 2 из 4",
+      "Шаг 3 из 4",
+      "Шаг 4 из 4"
+    ],
+    "success": true,
+    "intercepted": 1,
+    "screenshot": ".studio-tmp/browser-repair/screens-quiz-e2e-home-375.png",
+    "persistedLeadDelta": 1
+  },
+  {
+    "path": "/",
+    "width": 1440,
+    "steps": [
+      "Шаг 2 из 4",
+      "Шаг 3 из 4",
+      "Шаг 4 из 4"
+    ],
+    "success": true,
+    "intercepted": 1,
+    "screenshot": ".studio-tmp/browser-repair/screens-quiz-e2e-home-1440.png",
+    "persistedLeadDelta": 1
+  },
+  {
+    "path": "/ppf",
+    "width": 375,
+    "steps": [
+      "Шаг 2 из 3",
+      "Шаг 3 из 3"
+    ],
+    "success": true,
+    "intercepted": 1,
+    "screenshot": ".studio-tmp/browser-repair/screens-quiz-e2e-ppf-375.png",
+    "persistedLeadDelta": 1
+  },
+  {
+    "path": "/ppf",
+    "width": 1440,
+    "steps": [
+      "Шаг 2 из 3",
+      "Шаг 3 из 3"
+    ],
+    "success": true,
+    "intercepted": 1,
+    "screenshot": ".studio-tmp/browser-repair/screens-quiz-e2e-ppf-1440.png",
+    "persistedLeadDelta": 1
+  },
+  {
+    "path": "/polirovka",
+    "width": 375,
+    "steps": [
+      "Шаг 2 из 4",
+      "Шаг 3 из 4",
+      "Шаг 4 из 4"
+    ],
+    "success": true,
+    "intercepted": 1,
+    "screenshot": ".studio-tmp/browser-repair/screens-quiz-e2e-polirovka-375.png",
+    "persistedLeadDelta": 1
+  },
+  {
+    "path": "/polirovka",
+    "width": 1440,
+    "steps": [
+      "Шаг 2 из 4",
+      "Шаг 3 из 4",
+      "Шаг 4 из 4"
+    ],
+    "success": true,
+    "intercepted": 1,
+    "screenshot": ".studio-tmp/browser-repair/screens-quiz-e2e-polirovka-1440.png",
+    "persistedLeadDelta": 1
+  },
+  {
+    "path": "/antikor",
+    "width": 375,
+    "steps": [],
+    "error": "locator.click: Timeout 10000ms exceeded.\nCall log:\n  - waiting for getByText(/^Шаг \\d из \\d$/).first().locator('..').locator('..').getByRole('button', { name: 'Не нашли модель? Выбрать класс вручную' })\n",
+    "intercepted": 0,
+    "screenshot": ".studio-tmp/browser-repair/screens-quiz-e2e-antikor-375.png",
+    "persistedLeadDelta": 0,
+    "success": false
+  },
+  {
+    "path": "/antikor",
+    "width": 1440,
+    "steps": [],
+    "error": "locator.click: Timeout 10000ms exceeded.\nCall log:\n  - waiting for getByText(/^Шаг \\d из \\d$/).first().locator('..').locator('..').getByRole('button', { name: 'Не нашли модель? Выбрать класс вручную' })\n",
+    "intercepted": 0,
+    "screenshot": ".studio-tmp/browser-repair/screens-quiz-e2e-antikor-1440.png",
+    "persistedLeadDelta": 0,
+    "success": false
+  }
+]

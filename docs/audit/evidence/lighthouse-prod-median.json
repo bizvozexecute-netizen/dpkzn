@@ -1,0 +1,1380 @@
+{
+  "base": "https://dpkzn.ru",
+  "label": "Публичный production (только GET, формы не отправлялись)",
+  "blocked": [
+    "*mc.yandex*",
+    "*metrika*",
+    "*/api/visits*",
+    "*/api/submit*",
+    "*/api/contact-click*",
+    "*top-fwz*",
+    "*vk.com/rtrg*",
+    "*googletagmanager*",
+    "*google-analytics*"
+  ],
+  "runsPerTemplate": 3,
+  "lighthouse": "12.8.2",
+  "date": "2026-11-17T08:12:41.452Z",
+  "results": [
+    {
+      "name": "home-mobile",
+      "url": "/",
+      "formFactor": "mobile",
+      "runs": [
+        {
+          "perf": 99,
+          "a11y": 96,
+          "LCP_ms": 1991,
+          "CLS": 0,
+          "TBT_ms": 59,
+          "FCP_ms": 1391,
+          "JS_kB": 165,
+          "total_kB": 311,
+          "runtimeError": null
+        },
+        {
+          "perf": 99,
+          "a11y": 96,
+          "LCP_ms": 1549,
+          "CLS": 0,
+          "TBT_ms": 116,
+          "FCP_ms": 1399,
+          "JS_kB": 165,
+          "total_kB": 311,
+          "runtimeError": null
+        },
+        {
+          "perf": 99,
+          "a11y": 96,
+          "LCP_ms": 1895,
+          "CLS": 0,
+          "TBT_ms": 74,
+          "FCP_ms": 1370,
+          "JS_kB": 166,
+          "total_kB": 312,
+          "runtimeError": null
+        }
+      ],
+      "okRuns": 3,
+      "median": {
+        "perf": 99,
+        "a11y": 96,
+        "LCP_ms": 1895,
+        "CLS": 0,
+        "TBT_ms": 74,
+        "FCP_ms": 1391,
+        "JS_kB": 165,
+        "total_kB": 311
+      },
+      "range": {
+        "perf": [
+          99,
+          99
+        ],
+        "a11y": [
+          96,
+          96
+        ],
+        "LCP_ms": [
+          1549,
+          1991
+        ],
+        "CLS": [
+          0,
+          0
+        ],
+        "TBT_ms": [
+          59,
+          116
+        ],
+        "FCP_ms": [
+          1370,
+          1399
+        ],
+        "JS_kB": [
+          165,
+          166
+        ],
+        "total_kB": [
+          311,
+          312
+        ]
+      }
+    },
+    {
+      "name": "home-desktop",
+      "url": "/",
+      "formFactor": "desktop",
+      "runs": [
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 519,
+          "CLS": 0,
+          "TBT_ms": 0,
+          "FCP_ms": 310,
+          "JS_kB": 174,
+          "total_kB": 617,
+          "runtimeError": null
+        },
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 489,
+          "CLS": 0,
+          "TBT_ms": 0,
+          "FCP_ms": 350,
+          "JS_kB": 174,
+          "total_kB": 571,
+          "runtimeError": null
+        },
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 519,
+          "CLS": 0,
+          "TBT_ms": 0,
+          "FCP_ms": 355,
+          "JS_kB": 174,
+          "total_kB": 571,
+          "runtimeError": null
+        }
+      ],
+      "okRuns": 3,
+      "median": {
+        "perf": 100,
+        "a11y": 96,
+        "LCP_ms": 519,
+        "CLS": 0,
+        "TBT_ms": 0,
+        "FCP_ms": 350,
+        "JS_kB": 174,
+        "total_kB": 571
+      },
+      "range": {
+        "perf": [
+          100,
+          100
+        ],
+        "a11y": [
+          96,
+          96
+        ],
+        "LCP_ms": [
+          489,
+          519
+        ],
+        "CLS": [
+          0,
+          0
+        ],
+        "TBT_ms": [
+          0,
+          0
+        ],
+        "FCP_ms": [
+          310,
+          355
+        ],
+        "JS_kB": [
+          174,
+          174
+        ],
+        "total_kB": [
+          571,
+          617
+        ]
+      }
+    },
+    {
+      "name": "service-mobile",
+      "url": "/ppf",
+      "formFactor": "mobile",
+      "runs": [
+        {
+          "perf": 98,
+          "a11y": 96,
+          "LCP_ms": 2031,
+          "CLS": 0,
+          "TBT_ms": 122,
+          "FCP_ms": 1431,
+          "JS_kB": 166,
+          "total_kB": 334,
+          "runtimeError": null
+        },
+        {
+          "perf": 96,
+          "a11y": 96,
+          "LCP_ms": 2257,
+          "CLS": 0,
+          "TBT_ms": 154,
+          "FCP_ms": 1413,
+          "JS_kB": 166,
+          "total_kB": 334,
+          "runtimeError": null
+        },
+        {
+          "perf": 97,
+          "a11y": 96,
+          "LCP_ms": 1670,
+          "CLS": 0,
+          "TBT_ms": 179,
+          "FCP_ms": 1670,
+          "JS_kB": 166,
+          "total_kB": 332,
+          "runtimeError": null
+        }
+      ],
+      "okRuns": 3,
+      "median": {
+        "perf": 97,
+        "a11y": 96,
+        "LCP_ms": 2031,
+        "CLS": 0,
+        "TBT_ms": 154,
+        "FCP_ms": 1431,
+        "JS_kB": 166,
+        "total_kB": 334
+      },
+      "range": {
+        "perf": [
+          96,
+          98
+        ],
+        "a11y": [
+          96,
+          96
+        ],
+        "LCP_ms": [
+          1670,
+          2257
+        ],
+        "CLS": [
+          0,
+          0
+        ],
+        "TBT_ms": [
+          122,
+          179
+        ],
+        "FCP_ms": [
+          1413,
+          1670
+        ],
+        "JS_kB": [
+          166,
+          166
+        ],
+        "total_kB": [
+          332,
+          334
+        ]
+      }
+    },
+    {
+      "name": "service-desktop",
+      "url": "/ppf",
+      "formFactor": "desktop",
+      "runs": [
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 554,
+          "CLS": 0.047,
+          "TBT_ms": 3,
+          "FCP_ms": 337,
+          "JS_kB": 181,
+          "total_kB": 822,
+          "runtimeError": null
+        },
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 655,
+          "CLS": 0.047,
+          "TBT_ms": 22,
+          "FCP_ms": 319,
+          "JS_kB": 181,
+          "total_kB": 821,
+          "runtimeError": null
+        },
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 544,
+          "CLS": 0,
+          "TBT_ms": 2,
+          "FCP_ms": 320,
+          "JS_kB": 181,
+          "total_kB": 722,
+          "runtimeError": null
+        }
+      ],
+      "okRuns": 3,
+      "median": {
+        "perf": 100,
+        "a11y": 96,
+        "LCP_ms": 554,
+        "CLS": 0.047,
+        "TBT_ms": 3,
+        "FCP_ms": 320,
+        "JS_kB": 181,
+        "total_kB": 821
+      },
+      "range": {
+        "perf": [
+          100,
+          100
+        ],
+        "a11y": [
+          96,
+          96
+        ],
+        "LCP_ms": [
+          544,
+          655
+        ],
+        "CLS": [
+          0,
+          0.047
+        ],
+        "TBT_ms": [
+          2,
+          22
+        ],
+        "FCP_ms": [
+          319,
+          337
+        ],
+        "JS_kB": [
+          181,
+          181
+        ],
+        "total_kB": [
+          722,
+          822
+        ]
+      }
+    },
+    {
+      "name": "alarms-mobile",
+      "url": "/ustanovka-signalizacii",
+      "formFactor": "mobile",
+      "runs": [
+        {
+          "perf": 95,
+          "a11y": 96,
+          "LCP_ms": 2226,
+          "CLS": 0,
+          "TBT_ms": 222,
+          "FCP_ms": 1089,
+          "JS_kB": 175,
+          "total_kB": 277,
+          "runtimeError": null
+        },
+        {
+          "perf": 98,
+          "a11y": 96,
+          "LCP_ms": 2235,
+          "CLS": 0,
+          "TBT_ms": 105,
+          "FCP_ms": 1147,
+          "JS_kB": 175,
+          "total_kB": 277,
+          "runtimeError": null
+        },
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 1682,
+          "CLS": 0,
+          "TBT_ms": 60,
+          "FCP_ms": 1127,
+          "JS_kB": 175,
+          "total_kB": 277,
+          "runtimeError": null
+        }
+      ],
+      "okRuns": 3,
+      "median": {
+        "perf": 98,
+        "a11y": 96,
+        "LCP_ms": 2226,
+        "CLS": 0,
+        "TBT_ms": 105,
+        "FCP_ms": 1127,
+        "JS_kB": 175,
+        "total_kB": 277
+      },
+      "range": {
+        "perf": [
+          95,
+          100
+        ],
+        "a11y": [
+          96,
+          96
+        ],
+        "LCP_ms": [
+          1682,
+          2235
+        ],
+        "CLS": [
+          0,
+          0
+        ],
+        "TBT_ms": [
+          60,
+          222
+        ],
+        "FCP_ms": [
+          1089,
+          1147
+        ],
+        "JS_kB": [
+          175,
+          175
+        ],
+        "total_kB": [
+          277,
+          277
+        ]
+      }
+    },
+    {
+      "name": "alarms-desktop",
+      "url": "/ustanovka-signalizacii",
+      "formFactor": "desktop",
+      "runs": [
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 596,
+          "CLS": 0,
+          "TBT_ms": 6,
+          "FCP_ms": 306,
+          "JS_kB": 181,
+          "total_kB": 423,
+          "runtimeError": null
+        },
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 542,
+          "CLS": 0,
+          "TBT_ms": 0,
+          "FCP_ms": 340,
+          "JS_kB": 181,
+          "total_kB": 375,
+          "runtimeError": null
+        },
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 588,
+          "CLS": 0,
+          "TBT_ms": 2,
+          "FCP_ms": 303,
+          "JS_kB": 181,
+          "total_kB": 422,
+          "runtimeError": null
+        }
+      ],
+      "okRuns": 3,
+      "median": {
+        "perf": 100,
+        "a11y": 96,
+        "LCP_ms": 588,
+        "CLS": 0,
+        "TBT_ms": 2,
+        "FCP_ms": 306,
+        "JS_kB": 181,
+        "total_kB": 422
+      },
+      "range": {
+        "perf": [
+          100,
+          100
+        ],
+        "a11y": [
+          96,
+          96
+        ],
+        "LCP_ms": [
+          542,
+          596
+        ],
+        "CLS": [
+          0,
+          0
+        ],
+        "TBT_ms": [
+          0,
+          6
+        ],
+        "FCP_ms": [
+          303,
+          340
+        ],
+        "JS_kB": [
+          181,
+          181
+        ],
+        "total_kB": [
+          375,
+          423
+        ]
+      }
+    },
+    {
+      "name": "case-mobile",
+      "url": "/portfolio/bmw-420d-detailing",
+      "formFactor": "mobile",
+      "runs": [
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 1172,
+          "CLS": 0,
+          "TBT_ms": 75,
+          "FCP_ms": 933,
+          "JS_kB": 171,
+          "total_kB": 284,
+          "runtimeError": null
+        },
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 1170,
+          "CLS": 0,
+          "TBT_ms": 84,
+          "FCP_ms": 948,
+          "JS_kB": 172,
+          "total_kB": 285,
+          "runtimeError": null
+        },
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 1491,
+          "CLS": 0,
+          "TBT_ms": 59,
+          "FCP_ms": 1013,
+          "JS_kB": 171,
+          "total_kB": 285,
+          "runtimeError": null
+        }
+      ],
+      "okRuns": 3,
+      "median": {
+        "perf": 100,
+        "a11y": 96,
+        "LCP_ms": 1172,
+        "CLS": 0,
+        "TBT_ms": 75,
+        "FCP_ms": 948,
+        "JS_kB": 171,
+        "total_kB": 285
+      },
+      "range": {
+        "perf": [
+          100,
+          100
+        ],
+        "a11y": [
+          96,
+          96
+        ],
+        "LCP_ms": [
+          1170,
+          1491
+        ],
+        "CLS": [
+          0,
+          0
+        ],
+        "TBT_ms": [
+          59,
+          84
+        ],
+        "FCP_ms": [
+          933,
+          1013
+        ],
+        "JS_kB": [
+          171,
+          172
+        ],
+        "total_kB": [
+          284,
+          285
+        ]
+      }
+    },
+    {
+      "name": "case-desktop",
+      "url": "/portfolio/bmw-420d-detailing",
+      "formFactor": "desktop",
+      "runs": [
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 491,
+          "CLS": 0,
+          "TBT_ms": 4,
+          "FCP_ms": 263,
+          "JS_kB": 177,
+          "total_kB": 410,
+          "runtimeError": null
+        },
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 320,
+          "CLS": 0,
+          "TBT_ms": 1,
+          "FCP_ms": 270,
+          "JS_kB": 177,
+          "total_kB": 411,
+          "runtimeError": null
+        },
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 479,
+          "CLS": 0,
+          "TBT_ms": 1,
+          "FCP_ms": 258,
+          "JS_kB": 177,
+          "total_kB": 410,
+          "runtimeError": null
+        }
+      ],
+      "okRuns": 3,
+      "median": {
+        "perf": 100,
+        "a11y": 96,
+        "LCP_ms": 479,
+        "CLS": 0,
+        "TBT_ms": 1,
+        "FCP_ms": 263,
+        "JS_kB": 177,
+        "total_kB": 410
+      },
+      "range": {
+        "perf": [
+          100,
+          100
+        ],
+        "a11y": [
+          96,
+          96
+        ],
+        "LCP_ms": [
+          320,
+          491
+        ],
+        "CLS": [
+          0,
+          0
+        ],
+        "TBT_ms": [
+          1,
+          4
+        ],
+        "FCP_ms": [
+          258,
+          270
+        ],
+        "JS_kB": [
+          177,
+          177
+        ],
+        "total_kB": [
+          410,
+          411
+        ]
+      }
+    },
+    {
+      "name": "article-mobile",
+      "url": "/blog/antidozhd-zachem-nuzhen",
+      "formFactor": "mobile",
+      "runs": [
+        {
+          "perf": 93,
+          "a11y": 96,
+          "LCP_ms": 2161,
+          "CLS": 0,
+          "TBT_ms": 286,
+          "FCP_ms": 977,
+          "JS_kB": 168,
+          "total_kB": 291,
+          "runtimeError": null
+        },
+        {
+          "perf": 82,
+          "a11y": 96,
+          "LCP_ms": 1744,
+          "CLS": 0,
+          "TBT_ms": 700,
+          "FCP_ms": 946,
+          "JS_kB": 168,
+          "total_kB": 292,
+          "runtimeError": null
+        },
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 1168,
+          "CLS": 0,
+          "TBT_ms": 58,
+          "FCP_ms": 1029,
+          "JS_kB": 168,
+          "total_kB": 292,
+          "runtimeError": null
+        }
+      ],
+      "okRuns": 3,
+      "median": {
+        "perf": 93,
+        "a11y": 96,
+        "LCP_ms": 1744,
+        "CLS": 0,
+        "TBT_ms": 286,
+        "FCP_ms": 977,
+        "JS_kB": 168,
+        "total_kB": 292
+      },
+      "range": {
+        "perf": [
+          82,
+          100
+        ],
+        "a11y": [
+          96,
+          96
+        ],
+        "LCP_ms": [
+          1168,
+          2161
+        ],
+        "CLS": [
+          0,
+          0
+        ],
+        "TBT_ms": [
+          58,
+          700
+        ],
+        "FCP_ms": [
+          946,
+          1029
+        ],
+        "JS_kB": [
+          168,
+          168
+        ],
+        "total_kB": [
+          291,
+          292
+        ]
+      }
+    },
+    {
+      "name": "article-desktop",
+      "url": "/blog/antidozhd-zachem-nuzhen",
+      "formFactor": "desktop",
+      "runs": [
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 430,
+          "CLS": 0.002,
+          "TBT_ms": 2,
+          "FCP_ms": 264,
+          "JS_kB": 174,
+          "total_kB": 453,
+          "runtimeError": null
+        },
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 477,
+          "CLS": 0,
+          "TBT_ms": 0,
+          "FCP_ms": 265,
+          "JS_kB": 174,
+          "total_kB": 354,
+          "runtimeError": null
+        },
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 478,
+          "CLS": 0,
+          "TBT_ms": 0,
+          "FCP_ms": 260,
+          "JS_kB": 174,
+          "total_kB": 353,
+          "runtimeError": null
+        }
+      ],
+      "okRuns": 3,
+      "median": {
+        "perf": 100,
+        "a11y": 96,
+        "LCP_ms": 477,
+        "CLS": 0,
+        "TBT_ms": 0,
+        "FCP_ms": 264,
+        "JS_kB": 174,
+        "total_kB": 354
+      },
+      "range": {
+        "perf": [
+          100,
+          100
+        ],
+        "a11y": [
+          96,
+          96
+        ],
+        "LCP_ms": [
+          430,
+          478
+        ],
+        "CLS": [
+          0,
+          0.002
+        ],
+        "TBT_ms": [
+          0,
+          2
+        ],
+        "FCP_ms": [
+          260,
+          265
+        ],
+        "JS_kB": [
+          174,
+          174
+        ],
+        "total_kB": [
+          353,
+          453
+        ]
+      }
+    },
+    {
+      "name": "portfolio-mobile",
+      "url": "/portfolio",
+      "formFactor": "mobile",
+      "runs": [
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 1358,
+          "CLS": 0,
+          "TBT_ms": 80,
+          "FCP_ms": 1041,
+          "JS_kB": 168,
+          "total_kB": 671,
+          "runtimeError": null
+        },
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 1585,
+          "CLS": 0,
+          "TBT_ms": 55,
+          "FCP_ms": 1040,
+          "JS_kB": 168,
+          "total_kB": 671,
+          "runtimeError": null
+        },
+        {
+          "perf": 99,
+          "a11y": 96,
+          "LCP_ms": 1596,
+          "CLS": 0,
+          "TBT_ms": 85,
+          "FCP_ms": 978,
+          "JS_kB": 168,
+          "total_kB": 671,
+          "runtimeError": null
+        }
+      ],
+      "okRuns": 3,
+      "median": {
+        "perf": 100,
+        "a11y": 96,
+        "LCP_ms": 1585,
+        "CLS": 0,
+        "TBT_ms": 80,
+        "FCP_ms": 1040,
+        "JS_kB": 168,
+        "total_kB": 671
+      },
+      "range": {
+        "perf": [
+          99,
+          100
+        ],
+        "a11y": [
+          96,
+          96
+        ],
+        "LCP_ms": [
+          1358,
+          1596
+        ],
+        "CLS": [
+          0,
+          0
+        ],
+        "TBT_ms": [
+          55,
+          85
+        ],
+        "FCP_ms": [
+          978,
+          1041
+        ],
+        "JS_kB": [
+          168,
+          168
+        ],
+        "total_kB": [
+          671,
+          671
+        ]
+      }
+    },
+    {
+      "name": "portfolio-desktop",
+      "url": "/portfolio",
+      "formFactor": "desktop",
+      "runs": [
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 503,
+          "CLS": 0,
+          "TBT_ms": 0,
+          "FCP_ms": 265,
+          "JS_kB": 174,
+          "total_kB": 743,
+          "runtimeError": null
+        },
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 470,
+          "CLS": 0,
+          "TBT_ms": 0,
+          "FCP_ms": 270,
+          "JS_kB": 174,
+          "total_kB": 743,
+          "runtimeError": null
+        },
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 502,
+          "CLS": 0,
+          "TBT_ms": 0,
+          "FCP_ms": 274,
+          "JS_kB": 174,
+          "total_kB": 745,
+          "runtimeError": null
+        }
+      ],
+      "okRuns": 3,
+      "median": {
+        "perf": 100,
+        "a11y": 96,
+        "LCP_ms": 502,
+        "CLS": 0,
+        "TBT_ms": 0,
+        "FCP_ms": 270,
+        "JS_kB": 174,
+        "total_kB": 743
+      },
+      "range": {
+        "perf": [
+          100,
+          100
+        ],
+        "a11y": [
+          96,
+          96
+        ],
+        "LCP_ms": [
+          470,
+          503
+        ],
+        "CLS": [
+          0,
+          0
+        ],
+        "TBT_ms": [
+          0,
+          0
+        ],
+        "FCP_ms": [
+          265,
+          274
+        ],
+        "JS_kB": [
+          174,
+          174
+        ],
+        "total_kB": [
+          743,
+          745
+        ]
+      }
+    },
+    {
+      "name": "blog-mobile",
+      "url": "/blog",
+      "formFactor": "mobile",
+      "runs": [
+        {
+          "perf": 97,
+          "a11y": 96,
+          "LCP_ms": 2313,
+          "CLS": 0,
+          "TBT_ms": 98,
+          "FCP_ms": 1338,
+          "JS_kB": 168,
+          "total_kB": 379,
+          "runtimeError": null
+        },
+        {
+          "perf": 98,
+          "a11y": 96,
+          "LCP_ms": 2190,
+          "CLS": 0,
+          "TBT_ms": 101,
+          "FCP_ms": 1215,
+          "JS_kB": 168,
+          "total_kB": 380,
+          "runtimeError": null
+        },
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 1350,
+          "CLS": 0,
+          "TBT_ms": 56,
+          "FCP_ms": 1275,
+          "JS_kB": 168,
+          "total_kB": 379,
+          "runtimeError": null
+        }
+      ],
+      "okRuns": 3,
+      "median": {
+        "perf": 98,
+        "a11y": 96,
+        "LCP_ms": 2190,
+        "CLS": 0,
+        "TBT_ms": 98,
+        "FCP_ms": 1275,
+        "JS_kB": 168,
+        "total_kB": 379
+      },
+      "range": {
+        "perf": [
+          97,
+          100
+        ],
+        "a11y": [
+          96,
+          96
+        ],
+        "LCP_ms": [
+          1350,
+          2313
+        ],
+        "CLS": [
+          0,
+          0
+        ],
+        "TBT_ms": [
+          56,
+          101
+        ],
+        "FCP_ms": [
+          1215,
+          1338
+        ],
+        "JS_kB": [
+          168,
+          168
+        ],
+        "total_kB": [
+          379,
+          380
+        ]
+      }
+    },
+    {
+      "name": "blog-desktop",
+      "url": "/blog",
+      "formFactor": "desktop",
+      "runs": [
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 502,
+          "CLS": 0,
+          "TBT_ms": 0,
+          "FCP_ms": 316,
+          "JS_kB": 174,
+          "total_kB": 823,
+          "runtimeError": null
+        },
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 485,
+          "CLS": 0,
+          "TBT_ms": 0,
+          "FCP_ms": 304,
+          "JS_kB": 174,
+          "total_kB": 822,
+          "runtimeError": null
+        },
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 471,
+          "CLS": 0.011,
+          "TBT_ms": 0,
+          "FCP_ms": 291,
+          "JS_kB": 174,
+          "total_kB": 922,
+          "runtimeError": null
+        }
+      ],
+      "okRuns": 3,
+      "median": {
+        "perf": 100,
+        "a11y": 96,
+        "LCP_ms": 485,
+        "CLS": 0,
+        "TBT_ms": 0,
+        "FCP_ms": 304,
+        "JS_kB": 174,
+        "total_kB": 823
+      },
+      "range": {
+        "perf": [
+          100,
+          100
+        ],
+        "a11y": [
+          96,
+          96
+        ],
+        "LCP_ms": [
+          471,
+          502
+        ],
+        "CLS": [
+          0,
+          0.011
+        ],
+        "TBT_ms": [
+          0,
+          0
+        ],
+        "FCP_ms": [
+          291,
+          316
+        ],
+        "JS_kB": [
+          174,
+          174
+        ],
+        "total_kB": [
+          822,
+          922
+        ]
+      }
+    },
+    {
+      "name": "contacts-mobile",
+      "url": "/contacts",
+      "formFactor": "mobile",
+      "runs": [
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 1200,
+          "CLS": 0,
+          "TBT_ms": 72,
+          "FCP_ms": 1050,
+          "JS_kB": 167,
+          "total_kB": 278,
+          "runtimeError": null
+        },
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 1112,
+          "CLS": 0,
+          "TBT_ms": 60,
+          "FCP_ms": 962,
+          "JS_kB": 167,
+          "total_kB": 278,
+          "runtimeError": null
+        },
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 1117,
+          "CLS": 0,
+          "TBT_ms": 67,
+          "FCP_ms": 1042,
+          "JS_kB": 167,
+          "total_kB": 278,
+          "runtimeError": null
+        }
+      ],
+      "okRuns": 3,
+      "median": {
+        "perf": 100,
+        "a11y": 96,
+        "LCP_ms": 1117,
+        "CLS": 0,
+        "TBT_ms": 67,
+        "FCP_ms": 1042,
+        "JS_kB": 167,
+        "total_kB": 278
+      },
+      "range": {
+        "perf": [
+          100,
+          100
+        ],
+        "a11y": [
+          96,
+          96
+        ],
+        "LCP_ms": [
+          1112,
+          1200
+        ],
+        "CLS": [
+          0,
+          0
+        ],
+        "TBT_ms": [
+          60,
+          72
+        ],
+        "FCP_ms": [
+          962,
+          1050
+        ],
+        "JS_kB": [
+          167,
+          167
+        ],
+        "total_kB": [
+          278,
+          278
+        ]
+      }
+    },
+    {
+      "name": "contacts-desktop",
+      "url": "/contacts",
+      "formFactor": "desktop",
+      "runs": [
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 694,
+          "CLS": 0,
+          "TBT_ms": 0,
+          "FCP_ms": 254,
+          "JS_kB": 174,
+          "total_kB": 359,
+          "runtimeError": null
+        },
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 693,
+          "CLS": 0,
+          "TBT_ms": 0,
+          "FCP_ms": 253,
+          "JS_kB": 174,
+          "total_kB": 359,
+          "runtimeError": null
+        },
+        {
+          "perf": 100,
+          "a11y": 96,
+          "LCP_ms": 698,
+          "CLS": 0,
+          "TBT_ms": 0,
+          "FCP_ms": 271,
+          "JS_kB": 174,
+          "total_kB": 359,
+          "runtimeError": null
+        }
+      ],
+      "okRuns": 3,
+      "median": {
+        "perf": 100,
+        "a11y": 96,
+        "LCP_ms": 694,
+        "CLS": 0,
+        "TBT_ms": 0,
+        "FCP_ms": 254,
+        "JS_kB": 174,
+        "total_kB": 359
+      },
+      "range": {
+        "perf": [
+          100,
+          100
+        ],
+        "a11y": [
+          96,
+          96
+        ],
+        "LCP_ms": [
+          693,
+          698
+        ],
+        "CLS": [
+          0,
+          0
+        ],
+        "TBT_ms": [
+          0,
+          0
+        ],
+        "FCP_ms": [
+          253,
+          271
+        ],
+        "JS_kB": [
+          174,
+          174
+        ],
+        "total_kB": [
+          359,
+          359
+        ]
+      }
+    }
+  ]
+}
