@@ -1,7 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { MessageCircle, Plus, Send } from "./icons";
+import { usePathname } from "next/navigation";
+import { MessageCircle, Phone, Plus, Send } from "./icons";
 import PhotoEstimateSheet from "./PhotoEstimateSheet";
 import type { CarClass } from "@/lib/types";
 import { reachGoal, goals } from "@/lib/analytics";
@@ -24,6 +25,8 @@ import { cn } from "@/lib/utils";
  */
 
 interface StickyCTAProps {
+  /** Номер для tel: — третий быстрый канал на мобильной панели */
+  phoneRaw?: string;
   whatsappUrl: string;
   telegramUrl: string;
   maxUrl: string;
@@ -39,6 +42,7 @@ export default function StickyCTA({
   maxUrl,
   carClasses = [],
   footerSelector = "footer",
+  phoneRaw,
 }: StickyCTAProps) {
   const [visible, setVisible] = useState(false);
   const [nearFooter, setNearFooter] = useState(false);
@@ -135,9 +139,14 @@ export default function StickyCTA({
 
   // Пока открыт шит «Расчёт по фото», панель уходит: под модальным окном
   // ей делать нечего, а на телефоне она бы легла поверх формы
+  // Посадочные сигнализаций (сезонный трафик Директа): на телефоне WhatsApp,
+  // Telegram и звонок держим на любом экране — с первого экрана, у футера и при
+  // фокусе в форме. Уступаем только поднятой клавиатуре и открытому шиту.
+  const pathname = usePathname();
+  const pinnedMobile = pathname === "/ustanovka-signalizacii" || pathname.startsWith("/ustanovka-signalizacii/");
   const shown =
     visible && !nearFooter && !nearAnatomy && !onContactStep && !keyboardOpen && !photoOpen && !leadFocus;
-  const shownMobile = shown && !sheetOpen;
+  const shownMobile = pinnedMobile ? !keyboardOpen && !photoOpen && !sheetOpen : shown && !sheetOpen;
 
 
 
@@ -151,13 +160,16 @@ export default function StickyCTA({
       maxUrl={maxUrl}
       carClasses={carClasses}
     />}
+    {/* Закреплённая панель не должна закрывать низ футера */}
+    {pinnedMobile && <div aria-hidden="true" className="h-16 lg:hidden" />}
     <div
+      data-sticky-cta={pinnedMobile ? "pinned" : undefined}
       className={cn(
         "fixed z-70 transition-[opacity,transform] duration-250 ease-out",
         "inset-x-0 bottom-0 lg:inset-x-auto lg:bottom-6 lg:right-6",
-        shown ? "translate-y-0 opacity-100" : "hidden",
+        shown ? "translate-y-0 opacity-100" : pinnedMobile ? "lg:hidden" : "hidden",
       )}
-      inert={!shown}
+      inert={!shown && !pinnedMobile}
     >
       {/* Мобайл: нижняя панель 64px; уступает низ экрана шиту «Анатомии» */}
       <div
@@ -167,13 +179,24 @@ export default function StickyCTA({
           !shownMobile && "pointer-events-none translate-y-4 opacity-0",
         )}
       >
-        <button
-          type="button"
-          onClick={openPhoto}
-          className="ds-btn-primary ds-focus h-12 flex-1 rounded-pill bg-ink px-5 text-body-sm font-semibold text-bg transition-colors duration-250 active:bg-accent-pressed"
-        >
-          Расчёт по фото
-        </button>
+        {pinnedMobile ? (
+          // Посадочные сигнализаций: одна форма на странице — ведём к ней,
+          // а не открываем второй (шит «Расчёт по фото»)
+          <a
+            href={pathname === "/ustanovka-signalizacii" ? "#quiz" : "#alarm-form"}
+            className="ds-btn-primary ds-focus flex h-12 min-w-0 flex-1 items-center justify-center whitespace-nowrap rounded-pill bg-ink px-3 text-body-sm sm:px-5 font-semibold text-bg transition-colors duration-250 active:bg-accent-pressed"
+          >
+            Узнать цену
+          </a>
+        ) : (
+          <button
+            type="button"
+            onClick={openPhoto}
+            className="ds-btn-primary ds-focus h-12 min-w-0 flex-1 whitespace-nowrap rounded-pill bg-ink px-3 text-body-sm sm:px-5 font-semibold text-bg transition-colors duration-250 active:bg-accent-pressed"
+          >
+            Расчёт по фото
+          </button>
+        )}
         <a
           href={whatsappUrl}
           target="_blank"
@@ -194,6 +217,16 @@ export default function StickyCTA({
         >
           <Send size={20} className="text-telegram" />
         </a>
+        {phoneRaw && (
+          <a
+            href={`tel:+${phoneRaw.replace(/\D/g, "")}`}
+            aria-label="Позвонить"
+            className="ds-focus flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-pill border border-line bg-surface"
+            onClick={() => reachGoal(goals.PHONE_CLICK)}
+          >
+            <Phone size={20} className="text-ink" />
+          </a>
+        )}
       </div>
 
       {/* Десктоп: капсула справа внизу */}

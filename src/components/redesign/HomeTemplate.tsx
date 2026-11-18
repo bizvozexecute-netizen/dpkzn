@@ -9,6 +9,7 @@ import PortfolioShowcase, { type ShowcaseItem } from "./PortfolioShowcase";
 import HomeQuizSection from "./HomeQuizSection";
 import Reveal from "@/components/ds/Reveal";
 import SeasonBar from "@/components/ds/SeasonBar";
+import AlarmSeasonBar from "./AlarmSeasonBar";
 import LeadFormSection from "@/components/ds/LeadFormSection";
 import { seasonIsLive } from "@/lib/redesign/season";
 import type { CarClass, SeasonalOfferData } from "@/lib/types";
@@ -83,6 +84,8 @@ export default function HomeTemplate({
 
       {/* Сезон: одна строка под hero, ведёт к пресету «зоны риска» в анатомии */}
       {seasonIsLive(season) && <SeasonBar offer={season} href="#anatomy" />}
+      {/* Сезон сигнализаций: строка на хаб, тексты из alarm_landings */}
+      <AlarmSeasonBar />
 
       {/* Второй блок — выбор задачи с ценой вместо бегущей строки (владелец
           23.09.2026: «второй блок тоже слова»). Цены — отличие от всех

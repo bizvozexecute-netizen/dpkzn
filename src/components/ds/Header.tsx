@@ -33,6 +33,8 @@ interface HeaderProps {
   maxUrl: string;
   /** Куда ведёт кнопка «Расчёт»: якорь квиза страницы */
   quizHref?: string;
+  /** Сезонная ссылка в мегаменю (сигнализации) */
+  season?: { label: string; text: string; href: string } | null;
 }
 
 const INTENT_DELAY = 100;
@@ -46,6 +48,7 @@ export default function Header({
   telegramUrl,
   maxUrl,
   quizHref = "#quiz",
+  season,
 }: HeaderProps) {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
@@ -262,6 +265,15 @@ export default function Header({
             </div>
           ))}
         </div>
+        {season && (
+          <div className="ds-container border-t border-line py-4">
+            <Link href={season.href} onClick={closeMenus} className="ds-focus group inline-flex items-center gap-3 rounded-sm text-body-sm">
+              <span aria-hidden="true" className="h-1.5 w-1.5 rounded-pill bg-accent" />
+              <span className="font-semibold text-ink group-hover:text-accent">{season.label}</span>
+              <span className="text-ink-secondary">{season.text}</span>
+            </Link>
+          </div>
+        )}
       </div>}
 
     </header>
@@ -278,6 +290,16 @@ export default function Header({
         inert={!mobileOpen}
       >
         <div className="ds-container flex min-h-full flex-col py-6">
+          {season && (
+            <Link
+              href={season.href}
+              onClick={() => setMobileOpen(false)}
+              className="ds-focus mb-2 flex min-h-[56px] items-center gap-3 border-b border-line text-body font-semibold text-accent"
+            >
+              <span aria-hidden="true" className="h-1.5 w-1.5 flex-shrink-0 rounded-pill bg-accent" />
+              {season.label}
+            </Link>
+          )}
           <nav aria-label="Услуги">
             {groups.map((group) => {
               const open = openGroup === group.title;

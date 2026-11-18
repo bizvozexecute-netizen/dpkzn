@@ -298,6 +298,37 @@ export const stats = sqliteTable("stats", {
   sortOrder: integer("sort_order").notNull().default(0),
 });
 
+// ── Посадочные страницы сигнализаций (/ustanovka-signalizacii/[slug]) ──
+// Списки — JSON-массивы строк, FAQ — JSON-массив {question, answer}.
+// Прайс, этапы, кейсы и отзывы берутся из услуги ustanovka-signalizacii.
+
+export const alarmLandings = sqliteTable("alarm_landings", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
+  slug: text("slug").notNull().unique(),
+  isActive: integer("is_active", { mode: "boolean" }).notNull().default(true),
+  sortOrder: integer("sort_order").notNull().default(0),
+  /** Короткое название для ссылок с хаба, мегаменю и блога */
+  navLabel: text("nav_label").notNull(),
+  metaTitle: text("meta_title").notNull(),
+  metaDescription: text("meta_description").notNull(),
+  h1: text("h1").notNull(),
+  overline: text("overline"),
+  lead: text("lead").notNull(),
+  /** JSON string[] — тезисы оффера в первом экране */
+  offerPoints: text("offer_points").notNull().default("[]"),
+  priceTitle: text("price_title").notNull().default(""),
+  includedTitle: text("included_title").notNull().default(""),
+  /** JSON string[] — что входит, сроки, гарантия (только подтверждённое) */
+  included: text("included").notNull().default("[]"),
+  /** JSON {question, answer}[] */
+  faq: text("faq").notNull().default("[]"),
+  formTitle: text("form_title").notNull().default(""),
+  formHint: text("form_hint").notNull().default(""),
+  submitLabel: text("submit_label").notNull().default(""),
+  /** Строка-тизер для хаба и баннера сезона */
+  teaser: text("teaser").notNull().default(""),
+});
+
 // ══════════════════════════════════════
 // RELATIONS (for relational queries)
 // ══════════════════════════════════════

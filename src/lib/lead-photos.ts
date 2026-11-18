@@ -1,5 +1,5 @@
 import sharp from "sharp";
-import {mkdir,writeFile,unlink,statfs} from "node:fs/promises";
+import {mkdir,writeFile,unlink,statfs,readFile} from "node:fs/promises";
 import path from "node:path";
 import {randomUUID} from "node:crypto";
 export const photoDir=()=>path.join(process.env.LEADS_DATA_DIR||path.join(process.cwd(),"data"),"lead-photos");
@@ -31,6 +31,10 @@ export async function savePhotos(files:File[]):Promise<LeadPhoto[]> {
     }
     return photos;
   }catch(e){await removePhotos(photos);throw e;}
+}
+/** JPEG-копии сохранённых фото заявки — для альбома в Telegram. */
+export async function photoJpegs(photos:LeadPhoto[]):Promise<Buffer[]> {
+  return Promise.all(photos.map(async p=>sharp(await readFile(path.join(photoDir(),p.id+".webp"))).jpeg({quality:85}).toBuffer()));
 }
 export async function readSubmission(request:Request) {
   const reader=request.body?.getReader();const chunks:Uint8Array[]=[];let size=0;

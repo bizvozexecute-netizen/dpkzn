@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllServices } from "@/lib/db/queries/services";
 import { getBlogPosts, getPortfolioItems } from "@/lib/db/queries/content";
+import { ALARM_HUB_URL, getAlarmLandings } from "@/lib/db/queries/alarm";
 
 const DOMAIN = "https://dpkzn.ru";
 
@@ -32,7 +33,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     ...services,
-    ...services.filter(s=>s.url.endsWith("/ustanovka-signalizacii")).flatMap(s=>["avtozapusk","vybor-signalizacii"].map(slug=>({url:s.url+"/"+slug}))),
+    // Посадочные сигнализаций — только при активном хабе и активной записи в alarm_landings
+    ...(services.some((s) => s.url === `${DOMAIN}${ALARM_HUB_URL}`)
+      ? getAlarmLandings().map((l) => ({ url: `${DOMAIN}${l.url}`, changeFrequency: "monthly" as const, priority: 0.8 }))
+      : []),
     { url: `${DOMAIN}/antikor` },
     {
       url: `${DOMAIN}/portfolio`,

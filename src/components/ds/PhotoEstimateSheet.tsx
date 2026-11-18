@@ -11,6 +11,7 @@ import type { CarClass } from "@/lib/types";
 import { submitForm } from "@/lib/form-submit";
 import { goals, reachGoal } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
+import { PHOTO_SERVICES, photoServiceText, serviceForPath } from "@/lib/photo-estimate-services";
 
 /**
  * «Расчёт по фото» по нажатию липкой кнопки (владелец 04.09: кнопка
@@ -42,7 +43,12 @@ export default function PhotoEstimateSheet({
   maxUrl,
   carClasses,
 }: PhotoEstimateSheetProps) {
-  const isPpf = usePathname() === "/ppf";
+  const pathname = usePathname();
+  const isPpf = pathname === "/ppf";
+  /** Услуга: подставлена по странице, клиент может поменять; выбор действует на этой странице */
+  const [choice, setChoice] = useState<{ path: string | null; id: string } | null>(null);
+  const service = choice && choice.path === pathname ? choice.id : serviceForPath(pathname);
+  const setService = (id: string) => setChoice({ path: pathname, id });
   const [phone, setPhone] = useState("");
   const [photos, setPhotos] = useState<File[]>([]);
   /** Автомобиль по желанию: модель из подбора либо класс вручную */
@@ -96,7 +102,7 @@ export default function PhotoEstimateSheet({
       phone,
       carClass: pick?.classLabel,
       carBrand: pick?.brand || undefined,
-      service: isPpf ? "Антигравийная оклейка — расчёт по фото" : "Расчёт по фото",
+      service: photoServiceText(service),
       channel: "Звонок",
       source: "photo-estimate",
     }, photos);
@@ -197,6 +203,23 @@ export default function PhotoEstimateSheet({
               }}
               className="mt-4 space-y-3"
             >
+              {/* Одна строка, как поле телефона: 13 кнопок занимали на телефоне целый экран. */}
+              <div className="flex flex-col gap-2">
+                <label htmlFor="photo-service" className="text-body-sm text-ink">Что сделать?</label>
+                <select
+                  id="photo-service"
+                  value={service}
+                  onChange={(e) => setService(e.target.value)}
+                  disabled={sending}
+                  className="ds-focus h-12 w-full min-w-0 rounded-md border border-line bg-surface px-4 text-[16px] text-ink transition-colors duration-150 focus:border-[rgba(var(--accent-rgb),0.6)] focus:outline-none"
+                >
+                  {PHOTO_SERVICES.map((s) => (
+                    <option key={s.id} value={s.id}>
+                      {s.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
               <PhotoAttachments files={photos} onChange={setPhotos} disabled={sending} />
               <div className="flex flex-col gap-2">
                 <label htmlFor="photo-phone" className="text-body-sm text-ink">Телефон для ответа</label>
