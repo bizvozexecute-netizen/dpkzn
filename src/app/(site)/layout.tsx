@@ -1,6 +1,7 @@
 import DsHeader, { type HeaderGroup } from "@/components/ds/Header";
 import DsFooter from "@/components/ds/Footer";
 import StickyCTA from "@/components/ds/StickyCTA";
+import { getAlarmSeason } from "@/components/redesign/AlarmSeasonBar";
 import { MEGAMENU_GROUPS } from "@/lib/redesign/nav-groups";
 import ScrollTracker from "@/components/funnel/ScrollTracker";
 import CursorWheel from "@/components/fx/CursorWheel";
@@ -142,6 +143,7 @@ export default function SiteLayout({
         whatsappUrl={whatsappUrl}
         telegramUrl={telegramUrl}
         maxUrl={maxUrl}
+        season={getAlarmSeason()}
       />
       {/* Без верхнего отступа: hero уходит под прозрачную шапку (ДС §4.6) */}
       <main className="site-content">{children}</main>
@@ -160,6 +162,7 @@ export default function SiteLayout({
         whatsappUrl={whatsappUrl}
         telegramUrl={telegramUrl}
         maxUrl={maxUrl}
+        phoneRaw={phoneRaw}
         carClasses={getCarClassesForPricing()}
       />
 

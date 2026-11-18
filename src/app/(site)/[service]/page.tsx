@@ -6,6 +6,15 @@ import { getServicePageData } from "@/lib/redesign/service-page";
 import ServiceTemplate from "@/components/redesign/ServiceTemplate";
 import { formatPageTitle } from "@/lib/utils";
 import Link from "next/link";
+import CrossSell from "@/components/ds/CrossSell";
+import AlarmHubLinks from "@/components/redesign/AlarmHubLinks";
+import { QuickChannels } from "@/components/redesign/AlarmClient";
+import Button from "@/components/ds/Button";
+import { ALARM_HUB_SLUG, ALARM_HUB_URL, getAlarmLandings } from "@/lib/db/queries/alarm";
+import { getHeroMedia } from "@/lib/redesign/hero-loops";
+
+/** Услуги, с которых в сезон ведём на установку сигнализации */
+const ALARM_CROSS_FROM = new Set(["shumoizolyaciya", "tonirovka", "ustanovka-linz", "regulirovka-far"]);
 export const dynamic = "force-dynamic";
 /* ───────── Разметка Service ───────── */
 
@@ -126,11 +135,32 @@ export default async function ServicePage({ params }: PageProps) {
         season={getSeasonalOffer()}
         whatsappUrl={settings.whatsapp_url || "https://wa.me/79196449393"}
         telegramUrl={settings.telegram_url || "https://t.me/+79196449393"}
+        // Хаб сигнализаций: одна форма на странице — квиз #quiz; первый экран
+        // ведёт к нему и даёт быстрые каналы вместо второй формы
+        heroLeadSlot={slug === ALARM_HUB_SLUG ? (
+          <div className="mt-6 max-w-[560px] space-y-3">
+            <Button href="#quiz" className="w-full sm:w-auto">Рассчитать стоимость</Button>
+            <QuickChannels
+              source="alarm:hub"
+              whatsappUrl={settings.whatsapp_url || "https://wa.me/79196449393"}
+              telegramUrl={settings.telegram_url || "https://t.me/+79196449393"}
+              phone={settings.phone || "+7 (919) 644-93-93"}
+              phoneRaw={settings.phone_raw || "79196449393"}
+            />
+          </div>
+        ) : undefined}
       />
-      {slug === "ustanovka-signalizacii" && <nav aria-label="Подбор сигнализации" className="ds-container flex flex-wrap gap-6 pb-12">
-        <Link className="underline" href="/ustanovka-signalizacii/avtozapusk">Установка автозапуска зимой</Link>
-        <Link className="underline" href="/ustanovka-signalizacii/vybor-signalizacii">Как выбрать охранную систему</Link>
-      </nav>}
+      {slug === ALARM_HUB_SLUG && <AlarmHubLinks landings={getAlarmLandings()} />}
+      {ALARM_CROSS_FROM.has(slug) && service.crossSell?.href !== ALARM_HUB_URL && (() => {
+        const hub = getService(ALARM_HUB_SLUG);
+        return hub?.isActive ? (
+          <section className="ds-section-sm pb-safe" data-gate-new="сезон сигнализаций: кросс-продажа на хаб">
+            <div className="ds-container">
+              <CrossSell title={hub.h1} text={hub.subtitle} href={hub.url} image={getHeroMedia(ALARM_HUB_SLUG).poster} />
+            </div>
+          </section>
+        ) : null;
+      })()}
     </>
   );
 }

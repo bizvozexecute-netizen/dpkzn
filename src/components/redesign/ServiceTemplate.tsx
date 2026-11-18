@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 
 import dynamic from "next/dynamic";
@@ -46,6 +47,8 @@ interface ServiceTemplateProps {
   data: ServicePageData;
   whatsappUrl: string;
   telegramUrl: string;
+  /** Замена формы первого экрана: страница с одной формой (квизом) ниже */
+  heroLeadSlot?: React.ReactNode;
 }
 
 function Section({
@@ -86,7 +89,7 @@ function Section({
   );
 }
 
-export default function ServiceTemplate({ data, whatsappUrl, telegramUrl, season }: ServiceTemplateProps) {
+export default function ServiceTemplate({ data, whatsappUrl, telegramUrl, season, heroLeadSlot }: ServiceTemplateProps) {
   const { service, carClasses, reviews, hero, quiz, related, crossSell, allReviewsUrl } = data;
   const UniqueBlock = service.uniqueBlock ? UNIQUE_BLOCKS[service.uniqueBlock] : undefined;
   // Бейдж показан оверлайном над H1 — в строке фактов его не повторяем.
@@ -121,6 +124,7 @@ export default function ServiceTemplate({ data, whatsappUrl, telegramUrl, season
         // Страница-мост: заявки с антикора видно в отчёте отдельной строкой —
         // сколько людей из поиска по антикору ушло в плёнку и керамику
         leadSource={service.slug === "antikor" ? "antikor-bridge" : "hero:service"}
+        leadSlot={heroLeadSlot}
       />
 
       {/* Сезон — одной строкой между hero и прайсом, ведёт к расчёту сезонной услуги */}
@@ -137,10 +141,10 @@ export default function ServiceTemplate({ data, whatsappUrl, telegramUrl, season
 
       {service.slug === "ppf" && (
         <Section id="ppf-work" title="Пример полной оклейки кузова">
-          <a href="/portfolio/rolls-royce-cullinan-ppf" className="ds-focus block max-w-xl rounded-lg">
+          <Link href="/portfolio/rolls-royce-cullinan-ppf" className="ds-focus block max-w-xl rounded-lg">
             <Image src="/images/portfolio/gallery/rolls-royce-IMG_3858.webp" alt="Rolls-Royce Cullinan в студии Detailing Place" width={640} height={360} sizes="(max-width: 640px) 100vw, 576px" className="aspect-video w-full rounded-lg object-cover" />
             <span className="mt-3 block text-body text-ink underline">Rolls-Royce Cullinan — посмотреть, как оклеили кузов целиком</span>
-          </a>
+          </Link>
           <a href="#quiz" className="ds-focus inline-block py-3 text-body-sm text-ink underline">Рассчитать оклейку моего автомобиля</a>
         </Section>
       )}
