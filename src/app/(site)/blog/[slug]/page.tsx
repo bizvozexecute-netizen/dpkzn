@@ -4,12 +4,16 @@ import Image from "next/image";
 import Link from "next/link";
 import Breadcrumbs from "@/components/ds/Breadcrumbs";
 import ArticleCard from "@/components/ds/ArticleCard";
+import { ALARM_HUB_URL, getAlarmLandings } from "@/lib/db/queries/alarm";
 import SeoProse from "@/components/ds/SeoProse";
 import LeadFormSection from "@/components/ds/LeadFormSection";
 import { getBlogPost, getBlogPosts } from "@/lib/db/queries/content";
 import { getAllServices, getCarClassesForPricing } from "@/lib/db/queries/services";
 import { getSettings } from "@/lib/db/queries/settings";
 import { CATEGORY_SERVICE, readingMinutes, withAnchors } from "@/lib/redesign/blog";
+
+/** Статьи по теме сигнализаций получают CTA-блок посадочных */
+const ALARM_TOPIC_RX = /сигнализац|автозапуск|угон|прогрев двигател/i;
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -109,6 +113,11 @@ export default async function BlogPostPage({ params }: PageProps) {
     ...others.filter((p) => p.category === post.category),
     ...others.filter((p) => p.category !== post.category),
   ].slice(0, 3);
+
+  // Сезон сигнализаций: CTA только в статьях по теме (текст статьи не меняется)
+  const alarmLandings = ALARM_TOPIC_RX.test(`${post.title} ${post.excerpt ?? ""} ${post.content ?? ""}`)
+    ? getAlarmLandings()
+    : [];
 
   const dateLabel = new Date(post.date).toLocaleDateString("ru-RU", {
     year: "numeric",
@@ -238,6 +247,28 @@ export default async function BlogPostPage({ params }: PageProps) {
           )}
         </div>
       </article>
+
+      {alarmLandings.length > 0 && (
+        <nav aria-labelledby="alarm-cta-title" className="ds-container max-w-3xl pb-10" data-gate-new="сезон сигнализаций: CTA в статьях по теме">
+          <div className="rounded-xl border border-line bg-elevated p-5 md:p-8">
+            <p id="alarm-cta-title" className="font-display text-h4 text-ink">Сигнализация и автозапуск</p>
+            <ul className="mt-4 flex flex-wrap gap-2">
+              <li>
+                <Link href={ALARM_HUB_URL} className="ds-focus inline-flex min-h-[44px] items-center rounded-pill border border-line px-4 text-body-sm text-ink hover:border-accent">
+                  Цены на установку
+                </Link>
+              </li>
+              {alarmLandings.map((l) => (
+                <li key={l.slug}>
+                  <Link href={l.url} className="ds-focus inline-flex min-h-[44px] items-center rounded-pill border border-line px-4 text-body-sm text-ink hover:border-accent">
+                    {l.navLabel}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </nav>
+      )}
 
       {/* Читайте также — перелинковка той же категории */}
       {related.length > 0 && (

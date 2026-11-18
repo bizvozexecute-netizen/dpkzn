@@ -1,5 +1,5 @@
 import HeroPoster from "./HeroPoster";
-import Breadcrumbs from "./Breadcrumbs";
+import Breadcrumbs, { type Crumb } from "./Breadcrumbs";
 import Button from "./Button";
 import HeroLead from "@/components/redesign/HeroLead";
 import type { CarClass } from "@/lib/types";
@@ -29,6 +29,10 @@ interface HeroServiceProps {
   messengers: { whatsappUrl: string; telegramUrl: string; maxUrl?: string };
   /** Источник заявки из первого экрана; по умолчанию — первый экран услуги */
   leadSource?: "hero:service" | "antikor-bridge";
+  /** Цепочка крошек; по умолчанию — Главная › H1 */
+  crumbs?: Crumb[];
+  /** Замена формы первого экрана (посадочные с одной формой ниже) */
+  leadSlot?: React.ReactNode;
 }
 
 export default function HeroService({
@@ -43,6 +47,8 @@ export default function HeroService({
   carClasses,
   messengers,
   leadSource = "hero:service",
+  crumbs,
+  leadSlot,
 }: HeroServiceProps) {
   return (
     <section data-compact-hero={photoFirst || undefined} className="ds-fast-hero relative flex min-h-[520px] items-end overflow-hidden md:min-h-[620px]">
@@ -52,7 +58,7 @@ export default function HeroService({
         {photoFirst && <span aria-hidden="true" className="studio-frame-label">02 / Оклейка</span>}
 
       <div className="ds-container relative w-full pb-12 pt-28 md:pb-16 md:pt-32">
-        {!photoFirst && <Breadcrumbs items={[{ label: h1 }]} className="mb-6" />}
+        {!photoFirst && <Breadcrumbs items={crumbs ?? [{ label: h1 }]} className="mb-6" />}
 
         {!photoFirst && overline && <p className="mb-3 text-overline uppercase text-accent">{overline}</p>}
         <h1 className="max-w-[18ch] font-display text-h1 text-ink">{h1.replace(/автосигнализации/gi, word => word.slice(0, 4) + "\u00ad" + word.slice(4))}</h1>
@@ -75,11 +81,12 @@ export default function HeroService({
         {/* Главное действие — телефон (владелец 23.09.2026). Встаёт на место
             мини-старта квиза: остров заменён, а не добавлен. Название услуги
             уходит в заявку — мастер знает, о чём звонок. */}
-        {!photoFirst && <HeroLead source={leadSource} carClasses={carClasses} service={h1} messengers={messengers} />}
+        {!photoFirst && leadSlot}
+        {!photoFirst && !leadSlot && <HeroLead source={leadSource} carClasses={carClasses} service={h1} messengers={messengers} />}
 
         {/* Вторичные пути в одну строку: столбиком на телефоне они добавляли
             первому экрану ещё 100 px */}
-        <div className="mt-5 flex flex-wrap gap-2 sm:gap-3">
+        {!leadSlot && <div className="mt-5 flex flex-wrap gap-2 sm:gap-3">
           {/* На телефоне обе подписи целиком не влезают в 360 px — короткие
               показываются там, полные остаются в разметке */}
           <Button href="#photo-estimate" variant={photoFirst ? "primary" : "secondary"} className="h-12 min-w-max flex-1 px-3 text-body-sm sm:flex-none sm:px-6 md:h-12">
@@ -90,7 +97,7 @@ export default function HeroService({
             <span className="sm:hidden">Работы</span>
             <span className="hidden sm:inline">Смотреть работы</span>
           </Button>
-        </div>
+        </div>}
         {photoFirst && (
           <details className="mt-2 max-w-[480px]">
             <summary className="ds-focus w-fit cursor-pointer py-3 text-body-sm text-ink underline">Подробнее об оклейке и связи</summary>

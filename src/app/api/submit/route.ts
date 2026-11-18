@@ -1,10 +1,10 @@
-import { readSubmission, savePhotos, removePhotos, type LeadPhoto } from "@/lib/lead-photos";
+import { readSubmission, savePhotos, removePhotos, photoJpegs, type LeadPhoto } from "@/lib/lead-photos";
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { appendFileSync, mkdirSync } from "node:fs";
 import { createHash } from "node:crypto";
 import path from "node:path";
-import { sendTelegramMessage } from "@/lib/telegram";
+import { sendTelegramMessage, sendTelegramPhotos } from "@/lib/telegram";
 import { leads } from "@/lib/db/leads-schema";
 import { eq } from "drizzle-orm";
 import { normalizePhone } from "@/lib/phone";
@@ -230,7 +230,7 @@ export async function POST(request: NextRequest) {
         body.channel ? `💬 Канал: ${body.channel}` : "",
         body.source ? `📍 Источник: ${body.source}` : "",
         body.page ? `📄 Страница: ${body.page}` : "",
-        ...photos.map((p,i)=>`📷 Фото ${i+1} (вход для студии): https://dpkzn.ru${p.url}`),
+        photos.length ? `📷 Фото: ${photos.length} шт. — альбомом ниже` : "",
         body.utm?.utm_source || body.utm?.utm_medium || body.utm?.utm_campaign
           ? `📊 UTM: ${body.utm.utm_source || "—"} / ${body.utm.utm_medium || "—"} / ${body.utm.utm_campaign || "—"}`
           : "",
@@ -253,6 +253,28 @@ export async function POST(request: NextRequest) {
         if (!tgResult.ok) console.error("Telegram error:", tgResult.status, tgResult.error);
       } catch (e) {
         console.error("Telegram error:", e);
+      }
+      // Фото — альбомом прямо в чат. Не дошло — ссылки на админку, чтобы фото не потерялись.
+      if (photos.length) {
+        let photosOk = false;
+        try {
+          const album = await sendTelegramPhotos(tgToken, {
+            chatId: tgChat,
+            photos: await photoJpegs(photos),
+            caption: `📷 Фото к заявке ${body.phone}`,
+          });
+          photosOk = album.ok;
+          if (!album.ok) console.error("Telegram photos error:", album.status, album.error);
+        } catch (e) {
+          console.error("Telegram photos error:", e);
+        }
+        if (!photosOk) {
+          await sendTelegramMessage(tgToken, {
+            chatId: tgChat,
+            text: [`📷 Фото к заявке ${body.phone} не отправились альбомом. Открыть после входа в админку:`,
+              ...photos.map((p, i) => `Фото ${i + 1}: https://dpkzn.ru${p.url}`)].join("\n"),
+          }).catch((e) => console.error("Telegram photo links error:", e));
+        }
       }
     } else {
       console.warn("Telegram not configured: TG_BOT_TOKEN or TG_CHAT_ID missing");

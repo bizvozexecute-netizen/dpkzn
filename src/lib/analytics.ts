@@ -61,6 +61,8 @@ export function reachGoal(target: string, params?: Record<string, unknown>) {
 export const goals = {
   // Forms
   FORM_OPEN: "form_open",
+  /** Форма попала в экран (посадочные сигнализаций) */
+  FORM_VIEW: "form_view",
   FORM_SUBMIT: "form_submit",
   FORM_SUCCESS: "form_success",
   FORM_ERROR: "form_error",

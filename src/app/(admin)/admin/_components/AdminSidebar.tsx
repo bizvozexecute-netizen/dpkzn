@@ -12,6 +12,7 @@ const navItems = [
   { label: "Блог", href: "/admin/blog" },
   { label: "Портфолио", href: "/admin/portfolio" },
   { label: "Отзывы", href: "/admin/reviews" },
+  { label: "Сигнализации", href: "/admin/alarm" },
   { label: "Команда", href: "/admin/team" },
   { label: "Настройки", href: "/admin/settings" },
 ];
